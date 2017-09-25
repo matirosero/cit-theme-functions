@@ -48,7 +48,7 @@ function mro_cit_register_tax() {
 	);
 
 	$args = array(
-		'hierarchical'          => false,
+		'hierarchical'          => true,
 		'labels'                => $labels,
 		'show_ui'               => true,
 		'show_admin_column'     => true,
@@ -81,7 +81,7 @@ function mro_cit_register_tax() {
 	);
 
 	$args = array(
-		'hierarchical'          => false,
+		'hierarchical'          => true,
 		'labels'                => $labels,
 		'show_ui'               => true,
 		'show_admin_column'     => true,
@@ -114,7 +114,7 @@ function mro_cit_register_tax() {
 	);
 
 	$args = array(
-		'hierarchical'          => false,
+		'hierarchical'          => true,
 		'labels'                => $labels,
 		'show_ui'               => true,
 		'show_admin_column'     => true,
