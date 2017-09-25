@@ -42,6 +42,14 @@ require_once( dirname( __FILE__ ) . '/includes/register-cpt.php' );
 
 
 /**
+ * Taxonomies.
+ *
+ * @since 0.1.0
+ */
+require_once( dirname( __FILE__ ) . '/includes/register-taxonomies.php' );
+
+
+/**
  * Custom fields (uses CMB2).
  *
  * @since 0.1.0

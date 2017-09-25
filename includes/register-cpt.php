@@ -45,7 +45,7 @@ function mro_cit_register_cpt() {
 			'menu_icon' => 'dashicons-groups', /* the icon for the custom post type menu. uses built-in dashicons (CSS class name) */
 			'rewrite'	=> false, /* you can specify its url slug */
 			'has_archive' => true, /* you can rename the slug here */
-			// 'taxonomies' => array('Alliance_tag'),
+			'taxonomies' => array( 'category' ),
 			// 'capability_type' => 'post',
 			'hierarchical' => false, //false = post
 			/* the next one is important, it tells what's enabled in the post editor */
@@ -87,7 +87,7 @@ function mro_cit_register_cpt() {
 			'menu_icon' => 'dashicons-admin-links', /* the icon for the custom post type menu. uses built-in dashicons (CSS class name) */
 			'rewrite'	=> false, /* you can specify its url slug */
 			'has_archive' => true, /* you can rename the slug here */
-			// 'taxonomies' => array('Alliance_tag'),
+			'taxonomies' => array( 'category' ),
 			// 'capability_type' => 'post',
 			'hierarchical' => false, //false = post
 			/* the next one is important, it tells what's enabled in the post editor */
@@ -129,7 +129,7 @@ function mro_cit_register_cpt() {
 			'menu_icon' => 'dashicons-archive', /* the icon for the custom post type menu. uses built-in dashicons (CSS class name) */
 			'rewrite'	=> false, /* you can specify its url slug */
 			'has_archive' => true, /* you can rename the slug here */
-			// 'taxonomies' => array('Alliance_tag'),
+			'taxonomies' => array( 'category' ),
 			// 'capability_type' => 'post',
 			'hierarchical' => false, //false = post
 			/* the next one is important, it tells what's enabled in the post editor */
@@ -171,7 +171,7 @@ function mro_cit_register_cpt() {
 			'menu_icon' => 'dashicons-editor-help', /* the icon for the custom post type menu. uses built-in dashicons (CSS class name) */
 			'rewrite'	=> false, /* you can specify its url slug */
 			'has_archive' => true, /* you can rename the slug here */
-			// 'taxonomies' => array('Alliance_tag'),
+			'taxonomies' => array( 'category' ),
 			// 'capability_type' => 'post',
 			'hierarchical' => false, //false = post
 			/* the next one is important, it tells what's enabled in the post editor */
@@ -213,7 +213,7 @@ function mro_cit_register_cpt() {
 			'menu_icon' => 'dashicons-businessman', /* the icon for the custom post type menu. uses built-in dashicons (CSS class name) */
 			'rewrite'	=> false, /* you can specify its url slug */
 			'has_archive' => true, /* you can rename the slug here */
-			// 'taxonomies' => array('Alliance_tag'),
+			'taxonomies' => array( 'category' ),
 			// 'capability_type' => 'post',
 			'hierarchical' => false, //false = post
 			/* the next one is important, it tells what's enabled in the post editor */
@@ -255,7 +255,7 @@ function mro_cit_register_cpt() {
 			'menu_icon' => 'dashicons-backup', /* the icon for the custom post type menu. uses built-in dashicons (CSS class name) */
 			'rewrite'	=> false, /* you can specify its url slug */
 			'has_archive' => true, /* you can rename the slug here */
-			// 'taxonomies' => array('Alliance_tag'),
+			'taxonomies' => array( 'category' ),
 			// 'capability_type' => 'post',
 			'hierarchical' => false, //false = post
 			/* the next one is important, it tells what's enabled in the post editor */
@@ -297,7 +297,7 @@ function mro_cit_register_cpt() {
 			'menu_icon' => 'dashicons-id-alt', /* the icon for the custom post type menu. uses built-in dashicons (CSS class name) */
 			'rewrite'	=> false, /* you can specify its url slug */
 			'has_archive' => true, /* you can rename the slug here */
-			// 'taxonomies' => array('Alliance_tag'),
+			'taxonomies' => array( 'category' ),
 			// 'capability_type' => 'post',
 			'hierarchical' => false, //false = post
 			/* the next one is important, it tells what's enabled in the post editor */
@@ -339,7 +339,7 @@ function mro_cit_register_cpt() {
 			'menu_icon' => 'dashicons-format-quote', /* the icon for the custom post type menu. uses built-in dashicons (CSS class name) */
 			'rewrite'	=> false, /* you can specify its url slug */
 			'has_archive' => true, /* you can rename the slug here */
-			// 'taxonomies' => array('Alliance_tag'),
+			'taxonomies' => array( 'category' ),
 			// 'capability_type' => 'post',
 			'hierarchical' => false, //false = post
 			/* the next one is important, it tells what's enabled in the post editor */
@@ -381,7 +381,7 @@ function mro_cit_register_cpt() {
 			'menu_icon' => 'dashicons-book-alt', /* the icon for the custom post type menu. uses built-in dashicons (CSS class name) */
 			'rewrite'	=> false, /* you can specify its url slug */
 			'has_archive' => true, /* you can rename the slug here */
-			// 'taxonomies' => array('Alliance_tag'),
+			'taxonomies' => array( 'category' ),
 			// 'capability_type' => 'post',
 			'hierarchical' => false, //false = post
 			/* the next one is important, it tells what's enabled in the post editor */
