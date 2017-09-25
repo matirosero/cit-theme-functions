@@ -49,3 +49,12 @@ require_once( dirname( __FILE__ ) . '/includes/register-cpt.php' );
 require_once( dirname( __FILE__ ) . '/includes/demo-register-custom-fields.php' );
 
 require_once( dirname( __FILE__ ) . '/includes/register-custom-fields.php' );
+
+
+/**
+ * Sortable columns.
+ * https://code.tutsplus.com/articles/quick-tip-make-your-custom-column-sortable--wp-25095
+ *
+ * @since 0.1.0
+ */
+require_once( dirname( __FILE__ ) . '/includes/sort-columns.php' );
