@@ -2,11 +2,14 @@
 /**
  * Sortable columns.
  * https://code.tutsplus.com/articles/quick-tip-make-your-custom-column-sortable--wp-25095
+ * http://justintadlock.com/archives/2011/06/27/custom-columns-for-custom-post-types#comment-2279117)
  *
  * @since 0.1.0
  */
 
- add_filter( 'manage_edit-post_sortable_columns', 'mro_cit_sortable_post_columns' );
+
+
+add_filter( 'manage_edit-post_sortable_columns', 'mro_cit_sortable_post_columns' );
 function mro_cit_sortable_post_columns( $columns ) {
     $columns['_mro_manual_author'] = '_mro_manual_author';
 

@@ -66,3 +66,11 @@ require_once( dirname( __FILE__ ) . '/includes/register-custom-fields.php' );
  * @since 0.1.0
  */
 require_once( dirname( __FILE__ ) . '/includes/sort-columns.php' );
+
+
+/**
+ * Add old URL to columns.
+ *
+ * @since 0.1.0
+ */
+require_once( dirname( __FILE__ ) . '/includes/add-old-url-column.php' );
