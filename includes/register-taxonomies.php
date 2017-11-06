@@ -90,7 +90,7 @@ function mro_cit_register_tax() {
 		'rewrite'               => array( 'slug' => 'year' ),
 	);
 
-	register_taxonomy( 'mro_cit_event_year', $all_post_types, $args );
+	register_taxonomy( 'mro_cit_event_year', 'cit_past_event', $args );
 
 
 	// Add new taxonomy, NOT hierarchical (like tags)
