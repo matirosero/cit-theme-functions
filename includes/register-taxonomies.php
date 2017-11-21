@@ -27,6 +27,20 @@ function mro_cit_register_tax() {
 		'cit_report' 
 	);
 
+	$no_events = array( 
+		'page', 
+		'post', 
+		'cit_affiliate',
+		'cit_alliances',
+		'cit_archive',
+		'cit_unknown',
+		'cit_board_members',
+		// 'cit_past_event',
+		'cit_profile',
+		'cit_testimonials',
+		'cit_report' 
+	);
+
 	// Add new taxonomy, NOT hierarchical (like tags)
 	$labels = array(
 		'name'                       => _x( 'DB Sources', 'taxonomy general name', 'textdomain' ),
@@ -51,13 +65,13 @@ function mro_cit_register_tax() {
 		'hierarchical'          => true,
 		'labels'                => $labels,
 		'show_ui'               => true,
-		'show_admin_column'     => true,
+		// 'show_admin_column'     => true,
 		'update_count_callback' => '_update_post_term_count',
 		'query_var'             => true,
 		'rewrite'               => array( 'slug' => 'db-source' ),
 	);
 
-	register_taxonomy( 'mro_cit_db_src', $all_post_types, $args );
+	register_taxonomy( 'mro_cit_db_src', $no_events, $args );
 
 
 	// Add new taxonomy, NOT hierarchical (like tags)
@@ -87,7 +101,7 @@ function mro_cit_register_tax() {
 		'show_admin_column'     => true,
 		'update_count_callback' => '_update_post_term_count',
 		'query_var'             => true,
-		'rewrite'               => array( 'slug' => 'year' ),
+		'rewrite'               => array( 'slug' => 'yearly-events' ),
 	);
 
 	register_taxonomy( 'mro_cit_event_year', 'cit_past_event', $args );
@@ -117,11 +131,11 @@ function mro_cit_register_tax() {
 		'hierarchical'          => true,
 		'labels'                => $labels,
 		'show_ui'               => true,
-		'show_admin_column'     => true,
+		// 'show_admin_column'     => true,
 		'update_count_callback' => '_update_post_term_count',
 		'query_var'             => true,
 		'rewrite'               => array( 'slug' => 'weird-date' ),
 	);
 
-	register_taxonomy( 'mro_cit_weird_date', $all_post_types, $args );
+	register_taxonomy( 'mro_cit_weird_date', $no_events, $args );
 }

@@ -48,8 +48,8 @@ function mro_cit_register_migration_sidebar_metabox() {
 		// 'default'    => esc_attr__( 'Hey there, I\'m a read-only field', 'mro-cit-cpt' ),
 		'save_field' => false, // Disables the saving of this field.
 		'attributes' => array(
-			'disabled' => 'disabled',
-			'readonly' => 'readonly',
+			// 'disabled' => 'disabled',
+			// 'readonly' => 'readonly',
 		),
 		'before_field'  => 'link_to_old_url',
 	) );

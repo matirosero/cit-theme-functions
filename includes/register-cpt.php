@@ -43,7 +43,7 @@ function mro_cit_register_cpt() {
 			'query_var' => true,
 			'menu_position' => 40, /* this is what order you want it to appear in on the left hand side menu */
 			'menu_icon' => 'dashicons-groups', /* the icon for the custom post type menu. uses built-in dashicons (CSS class name) */
-			'rewrite'	=> false, /* you can specify its url slug */
+			'rewrite' 	=> array( 'slug' => 'afiliados' ),
 			'has_archive' => true, /* you can rename the slug here */
 			'taxonomies' => array( 'category' ),
 			// 'capability_type' => 'post',
@@ -85,7 +85,7 @@ function mro_cit_register_cpt() {
 			'query_var' => true,
 			'menu_position' => 40, /* this is what order you want it to appear in on the left hand side menu */
 			'menu_icon' => 'dashicons-admin-links', /* the icon for the custom post type menu. uses built-in dashicons (CSS class name) */
-			'rewrite'	=> false, /* you can specify its url slug */
+			'rewrite' 	=> array( 'slug' => 'alianzas' ),
 			'has_archive' => true, /* you can rename the slug here */
 			'taxonomies' => array( 'category' ),
 			// 'capability_type' => 'post',
@@ -122,7 +122,7 @@ function mro_cit_register_cpt() {
 			'description' => __( 'Archive items', 'mro-cit-cpt' ), /* Custom Type Description */
 			'public' => true,
 			'publicly_queryable' => true, //change to false?
-			'exclude_from_search' => true,
+			'exclude_from_search' => false,
 			'show_ui' => true,
 			'query_var' => true,
 			'menu_position' => 20, /* this is what order you want it to appear in on the left hand side menu */
@@ -164,7 +164,7 @@ function mro_cit_register_cpt() {
 			'description' => __( 'Unknown items', 'mro-cit-cpt' ), /* Custom Type Description */
 			'public' => true,
 			'publicly_queryable' => true, //change to false?
-			'exclude_from_search' => true,
+			'exclude_from_search' => false,
 			'show_ui' => true,
 			'query_var' => true,
 			'menu_position' => 50, /* this is what order you want it to appear in on the left hand side menu */
@@ -211,7 +211,7 @@ function mro_cit_register_cpt() {
 			'query_var' => true,
 			'menu_position' => 40, /* this is what order you want it to appear in on the left hand side menu */
 			'menu_icon' => 'dashicons-businessman', /* the icon for the custom post type menu. uses built-in dashicons (CSS class name) */
-			'rewrite'	=> false, /* you can specify its url slug */
+			'rewrite' 	=> array( 'slug' => 'junta-directiva' ),
 			'has_archive' => true, /* you can rename the slug here */
 			'taxonomies' => array( 'category' ),
 			// 'capability_type' => 'post',
@@ -248,14 +248,14 @@ function mro_cit_register_cpt() {
 			'description' => __( 'Past event items', 'mro-cit-cpt' ), /* Custom Type Description */
 			'public' => true,
 			'publicly_queryable' => true, //change to false?
-			'exclude_from_search' => true,
+			'exclude_from_search' => false,
 			'show_ui' => true,
 			'query_var' => true,
 			'menu_position' => 21, /* this is what order you want it to appear in on the left hand side menu */
 			'menu_icon' => 'dashicons-backup', /* the icon for the custom post type menu. uses built-in dashicons (CSS class name) */
-			'rewrite'	=> false, /* you can specify its url slug */
+			'rewrite' 	=> array( 'slug' => 'eventos-pasados' ),
 			'has_archive' => true, /* you can rename the slug here */
-			'taxonomies' => array( 'category' ),
+			'taxonomies' => array( 'category', 'mro_cit_event_year' ),
 			// 'capability_type' => 'post',
 			'hierarchical' => false, //false = post
 			/* the next one is important, it tells what's enabled in the post editor */
@@ -290,12 +290,12 @@ function mro_cit_register_cpt() {
 			'description' => __( 'Profile items', 'mro-cit-cpt' ), /* Custom Type Description */
 			'public' => true,
 			'publicly_queryable' => true, //change to false?
-			'exclude_from_search' => true,
+			'exclude_from_search' => false,
 			'show_ui' => true,
 			'query_var' => true,
 			'menu_position' => 40, /* this is what order you want it to appear in on the left hand side menu */
 			'menu_icon' => 'dashicons-id-alt', /* the icon for the custom post type menu. uses built-in dashicons (CSS class name) */
-			'rewrite'	=> false, /* you can specify its url slug */
+			'rewrite' 	=> array( 'slug' => 'biografias' ),
 			'has_archive' => true, /* you can rename the slug here */
 			'taxonomies' => array( 'category' ),
 			// 'capability_type' => 'post',
@@ -374,12 +374,12 @@ function mro_cit_register_cpt() {
 			'description' => __( 'Report items', 'mro-cit-cpt' ), /* Custom Type Description */
 			'public' => true,
 			'publicly_queryable' => true, //change to false?
-			'exclude_from_search' => true,
+			'exclude_from_search' => false,
 			'show_ui' => true,
 			'query_var' => true,
 			'menu_position' => 20, /* this is what order you want it to appear in on the left hand side menu */
 			'menu_icon' => 'dashicons-book-alt', /* the icon for the custom post type menu. uses built-in dashicons (CSS class name) */
-			'rewrite'	=> false, /* you can specify its url slug */
+			'rewrite' 	=> array( 'slug' => 'informes' ),
 			'has_archive' => true, /* you can rename the slug here */
 			'taxonomies' => array( 'category' ),
 			// 'capability_type' => 'post',

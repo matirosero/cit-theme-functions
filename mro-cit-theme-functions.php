@@ -2,7 +2,7 @@
 /*
 Plugin Name: CIT Theme Functions
 Plugin URI: https://github.com/matirosero/cit-theme-functions
-Description: Custom Genesis functions for the Nuts and Bolts Media website.
+Description: Custom functions for the Club de Investigación Tecnológica website.
 Version: 0.1
 Author: Mat Rosero
 Author URI: https://www.matilderosero.com/
