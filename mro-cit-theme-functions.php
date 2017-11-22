@@ -82,3 +82,11 @@ require_once( dirname( __FILE__ ) . '/includes/sort-columns.php' );
  * @since 0.1.0
  */
 require_once( dirname( __FILE__ ) . '/includes/add-old-url-column.php' );
+
+
+/**
+ * Widgets.
+ *
+ * @since 0.1.0
+ */
+require_once( dirname( __FILE__ ) . '/includes/widget-latest-cpt.php' );
