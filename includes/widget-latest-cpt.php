@@ -1,10 +1,15 @@
 <?php
 
 class mro_cit_LatestCPT_Widget extends WP_Widget {
-	
+
 	// Set up the widget name and description.
 	public function __construct() {
-	    $widget_options = array( 
+		$this->defaults = array(
+			'title'         => '',
+			'number'        => 5,
+			'post_type' 		=> 'cit_report',
+		);
+	    $widget_options = array(
 	      	'classname' => 'latest_cpt_widget',
 	      	'description' => 'This widget shows the most recent posts for a particular custom post type',
 	    );
@@ -18,15 +23,68 @@ class mro_cit_LatestCPT_Widget extends WP_Widget {
 		$number = $instance[ 'number' ];
 		$post_type = $instance['post_type'];
 
-		echo $args['before_widget'] . $args['before_title'] . $title . $args['after_title']; ?>
-		<p><strong>Number of posts:</strong> <?php echo $number ?></p>
+		$date_format = 'F j, Y';
+		if ( is_singular('cit_report') ) {
+			$date_format = 'F Y';
+		}
+
+		echo $args['before_widget'] . $args['before_title'] . $title . $args['after_title'];
+
+		/*
+		 * The WordPress Query class.
+		 *
+		 * @link http://codex.wordpress.org/Function_Reference/WP_Query
+		 */
+		$loop_args = array(
+
+			// Type & Status Parameters
+			'post_type'   => $post_type,
+			'post_status' => 'publish',
+
+			// Order & Orderby Parameters
+			'order'               => 'DESC',
+			'orderby'             => 'date',
+
+			// Pagination Parameters
+			'posts_per_page'         => $number,
+
+			'cache_results'          => true,
+			'update_post_term_cache' => true,
+			'update_post_meta_cache' => true,
+
+		);
+
+		$query = new WP_Query( $loop_args );
+
+		echo '<ul>';
+
+		while ( $query->have_posts() ) : $query->the_post(); ?>
+
+			<li>
+				<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+				<span class="date"><?php the_time($date_format) ?></span>
+			</li>
+
+		<?php endwhile;
+
+		echo '</ul>';
+
+		wp_reset_postdata();
+
+		$obj = get_post_type_object( $post_type );
+		$post_type_name = $obj->labels->name;
+
+		?>
+
+		<p><a class="" href="<?php echo get_post_type_archive_link( $post_type ); ?>">Más <?php echo $post_type_name; ?></a></p>
+
 		<?php echo $args['after_widget'];
 	}
 
 
  	// Create the admin area widget settings form.
   	public function form( $instance ) {
-    	$title = ! empty( $instance['title'] ) ? $instance['title'] : ''; 
+    	$title = ! empty( $instance['title'] ) ? $instance['title'] : '';
     	$number = ! empty( $instance['number'] ) ? $instance['number'] : '';
     	$post_type = ! empty( $instance['post_type'] ) ? $instance['post_type'] : '';
     	?>
@@ -42,7 +100,7 @@ class mro_cit_LatestCPT_Widget extends WP_Widget {
 			<label for="<?php echo $this->get_field_id( 'post_type' ); ?>">Post type:</label>
 			<select id="<?php echo $this->get_field_id( 'post_type' ); ?>" name="<?php echo $this->get_field_name( 'post_type' ); ?>">
 				<option value="cit_report" <?php echo ($post_type=='cit_report')?'selected':''; ?>>Reports</option>
-				<option value="cit_past_events" <?php echo ($post_type=='cit_past_events')?'selected':''; ?>>Past events</option>
+				<option value="cit_past_event" <?php echo ($post_type=='cit_past_event')?'selected':''; ?>>Past events</option>
 			</select>
 		</p>
 		<?php
@@ -55,7 +113,7 @@ class mro_cit_LatestCPT_Widget extends WP_Widget {
 		$instance[ 'title' ] = sanitize_text_field( $new_instance[ 'title' ] );
 		$instance[ 'number' ] = sanitize_text_field( $new_instance[ 'number' ] );
 		$new_post_type = sanitize_text_field( $new_instance[ 'post_type' ] );
-		if ( $new_post_type == 'cit_report' || $new_post_type == 'cit_past_events' ) :
+		if ( $new_post_type == 'cit_report' || $new_post_type == 'cit_past_event' ) :
 			$instance[ 'post_type' ] = $new_post_type;
 		endif;
 		return $instance;
@@ -63,7 +121,7 @@ class mro_cit_LatestCPT_Widget extends WP_Widget {
 }
 
 // Register the widget.
-function mro_cit_register_latest_cpt_widget() { 
+function mro_cit_register_latest_cpt_widget() {
   	register_widget( 'mro_cit_LatestCPT_Widget' );
 }
 add_action( 'widgets_init', 'mro_cit_register_latest_cpt_widget' );
