@@ -54,17 +54,35 @@ function mro_cit_register_events_metabox() {
 		'priority'   => 'high',
 	) );
 
+    // Repeatable group
+    $group_download = $cmb_demo->add_field( array(
+        'id'          => $prefix . 'presentations',
+        'type'        => 'group',
+        'options'     => array(
+            'group_title'   => __( 'Presentation', 'mro-cit-cpt' ) . ' {#}', // {#} gets replaced by row number
+            'add_button'    => __( 'Add another Presentation', 'mro-cit-cpt' ),
+            'remove_button' => __( 'Remove Presentation', 'mro-cit-cpt' ),
+            'sortable'      => true, // beta
+        ),
+    ) );
 
-	$cmb_demo->add_field( array(
+        //* Title
+    $cmb_demo->add_group_field( $group_download, array(
+        'name'    => __( 'File name', 'mro-cit-cpt' ),
+        'id'      => $prefix . 'presentation_name',
+        'type'    => 'text',
+    ) );
+
+	$cmb_demo->add_group_field( $group_download, array(
 		'name'       => esc_html__( 'File path', 'mro-cit-cpt' ),
 		// 'desc'       => esc_html__( 'field description (optional)', 'mro-cit-cpt' ),
-		'id'         => $prefix . 'download',
+		'id'         => $prefix . 'presentation_path',
 		'type'       => 'text',
 		// 'show_on_cb' => 'mro_cit_demo_hide_if_no_cats', // function should return a bool value
 		// 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
 		// 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
 		// 'on_front'        => false, // Optionally designate a field to wp-admin only
-		'repeatable'      => true,
+		// 'repeatable'      => true,
 		// 'column'          => true, // Display field value in the admin post-listing columns
 	) );
 
@@ -109,9 +127,9 @@ function mro_cit_register_events_metabox() {
 	) );
 
 	$cmb_demo->add_field( array(
-		'name' => esc_html__( 'Comments', 'mro-cit-cpt' ),
+		'name' => esc_html__( 'Evaluación de la actividad', 'mro-cit-cpt' ),
 		// 'desc' => esc_html__( 'field description (optional)', 'mro-cit-cpt' ),
-		'id'   => $prefix . 'comments',
+		'id'   => $prefix . 'evaluation',
 		'type'    => 'wysiwyg',
 		'options' => array(
 			'textarea_rows' => 5,
