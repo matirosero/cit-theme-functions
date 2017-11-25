@@ -61,7 +61,7 @@ class mro_cit_LatestCPT_Widget extends WP_Widget {
 		while ( $query->have_posts() ) : $query->the_post(); ?>
 
 			<li>
-				<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+				<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
 				<span class="date"><?php the_time($date_format) ?></span>
 			</li>
 
@@ -76,7 +76,7 @@ class mro_cit_LatestCPT_Widget extends WP_Widget {
 
 		?>
 
-		<p><a class="" href="<?php echo get_post_type_archive_link( $post_type ); ?>">Más <?php echo $post_type_name; ?></a></p>
+		<p><a class="" href="<?php echo get_post_type_archive_link( $post_type ); ?>">Ver más ...</a></p>
 
 		<?php echo $args['after_widget'];
 	}

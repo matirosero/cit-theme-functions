@@ -85,6 +85,15 @@ require_once( dirname( __FILE__ ) . '/includes/add-old-url-column.php' );
 
 
 /**
+ * Events Calendar.
+ *
+ * @since 0.1.0
+ */
+require_once( dirname( __FILE__ ) . '/includes/eventscalendar-helpers.php' );
+require_once( dirname( __FILE__ ) . '/includes/eventscalendar-custom-fields.php' );
+
+
+/**
  * Widgets.
  *
  * @since 0.1.0

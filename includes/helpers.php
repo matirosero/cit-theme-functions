@@ -10,7 +10,7 @@
  * Exclude categories from frontpage
  */
 function mro_cit_exclude_category( $query ) {
-    if ( $query->is_home() && $query->is_main_query() ) {
+    if ( ( $query->is_home() && $query->is_main_query() ) || ( $query->is_category( array( 15, 13 ) ) && $query->is_main_query() ) ) {
         $query->set( 'cat', '-1, -113' );
     }
 }
