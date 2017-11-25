@@ -10,13 +10,13 @@ function link_to_old_url( $field_args, $field ) {
 }
 
 
-add_action( 'cmb2_admin_init', 'mro_cit_register_report_dl_metabox' );
-function mro_cit_register_report_dl_metabox() {
+add_action( 'cmb2_admin_init', 'mro_cit_register_report_metabox' );
+function mro_cit_register_report_metabox() {
 	$prefix = 'mro_cit_report_';
 
 	$cmb_demo = new_cmb2_box( array(
 		'id'            => $prefix . 'downloads_metabox',
-		'title'         => esc_html__( 'Downloads information', 'mro-cit-cpt' ),
+		'title'         => esc_html__( 'Report download information', 'mro-cit-cpt' ),
 		'object_types'  => array( 
 			'cit_report' 
 		), // Post type
@@ -28,7 +28,7 @@ function mro_cit_register_report_dl_metabox() {
 	$cmb_demo->add_field( array(
 		'name'       => esc_html__( 'File path', 'mro-cit-cpt' ),
 		// 'desc'       => esc_html__( 'field description (optional)', 'mro-cit-cpt' ),
-		'id'         => $prefix . 'download',
+		'id'         => $prefix . 'download_path',
 		'type'       => 'text',
 		// 'show_on_cb' => 'mro_cit_demo_hide_if_no_cats', // function should return a bool value
 		// 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
@@ -37,6 +37,31 @@ function mro_cit_register_report_dl_metabox() {
 		// 'repeatable'      => true,
 		// 'column'          => true, // Display field value in the admin post-listing columns
 	) );
+
+
+	$cmb_demo->add_field( array(
+		'name' => esc_html__( 'Download ID', 'mro-cit-cpt' ),
+		'desc' => esc_html__( 'field description (optional)', 'mro-cit-cpt' ),
+		'id'   => $prefix . 'download_id',
+		'type' => 'text_small',
+		// 'repeatable' => true,
+		// 'column' => array(
+		// 	'name'     => esc_html__( 'Column Title', 'mro-cit-cpt' ), // Set the admin column title
+		// 	'position' => 2, // Set as the second column.
+		// );
+		// 'display_cb' => 'mro_cit_demo_display_text_small_column', // Output the display of the column values through a callback.
+	) );
+
+	$cmb_demo->add_field( array(
+		'name' => esc_html__( 'Download shortcode', 'mro-cit-cpt' ),
+		'desc' => esc_html__( 'Utilizar el botón "Add Download" para escoger el archivo. No poner nada más.', 'mro-cit-cpt' ),
+		'id'   => $prefix . 'download_shortcode',
+		'type'    => 'wysiwyg',
+		'options' => array(
+			'textarea_rows' => 2,
+		),
+	) );
+
 }
 
 
@@ -74,16 +99,13 @@ function mro_cit_register_events_metabox() {
     ) );
 
 	$cmb_demo->add_group_field( $group_download, array(
-		'name'       => esc_html__( 'File path', 'mro-cit-cpt' ),
-		// 'desc'       => esc_html__( 'field description (optional)', 'mro-cit-cpt' ),
-		'id'         => $prefix . 'presentation_path',
-		'type'       => 'text',
-		// 'show_on_cb' => 'mro_cit_demo_hide_if_no_cats', // function should return a bool value
-		// 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
-		// 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
-		// 'on_front'        => false, // Optionally designate a field to wp-admin only
-		// 'repeatable'      => true,
-		// 'column'          => true, // Display field value in the admin post-listing columns
+		'name' => esc_html__( 'Upload file', 'mro-cit-cpt' ),
+		'desc' => esc_html__( 'Upload an image or enter a URL.', 'mro-cit-cpt' ),
+		'id'   => $prefix . 'presentation_file',
+		'type' => 'file',
+		'query_args' => array(
+			'type' => 'application/pdf', // Make library only display PDFs.
+		),
 	) );
 
 	$cmb_demo->add_field( array(
@@ -113,6 +135,7 @@ function mro_cit_register_events_metabox() {
 		// 'desc' => esc_html__( 'field description (optional)', 'mro-cit-cpt' ),
 		'id'   => $prefix . 'gallery_text',
 		'type'    => 'wysiwyg',
+		'sanitization_cb' => false,
 		'options' => array(
 			'textarea_rows' => 5,
 		),
