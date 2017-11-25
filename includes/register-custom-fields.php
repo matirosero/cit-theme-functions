@@ -10,6 +10,116 @@ function link_to_old_url( $field_args, $field ) {
 }
 
 
+add_action( 'cmb2_admin_init', 'mro_cit_register_report_dl_metabox' );
+function mro_cit_register_report_dl_metabox() {
+	$prefix = 'mro_cit_report_';
+
+	$cmb_demo = new_cmb2_box( array(
+		'id'            => $prefix . 'downloads_metabox',
+		'title'         => esc_html__( 'Downloads information', 'mro-cit-cpt' ),
+		'object_types'  => array( 
+			'cit_report' 
+		), // Post type
+		'context'    => 'normal',
+		'priority'   => 'high',
+	) );
+
+
+	$cmb_demo->add_field( array(
+		'name'       => esc_html__( 'File path', 'mro-cit-cpt' ),
+		// 'desc'       => esc_html__( 'field description (optional)', 'mro-cit-cpt' ),
+		'id'         => $prefix . 'download',
+		'type'       => 'text',
+		// 'show_on_cb' => 'mro_cit_demo_hide_if_no_cats', // function should return a bool value
+		// 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
+		// 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
+		// 'on_front'        => false, // Optionally designate a field to wp-admin only
+		// 'repeatable'      => true,
+		// 'column'          => true, // Display field value in the admin post-listing columns
+	) );
+}
+
+
+add_action( 'cmb2_admin_init', 'mro_cit_register_events_metabox' );
+function mro_cit_register_events_metabox() {
+	$prefix = 'mro_cit_event_';
+
+	$cmb_demo = new_cmb2_box( array(
+		'id'            => $prefix . 'sections_metabox',
+		'title'         => esc_html__( 'Additional information', 'mro-cit-cpt' ),
+		'object_types'  => array( 
+			'cit_past_event' 
+		), // Post type
+		'context'    => 'normal',
+		'priority'   => 'high',
+	) );
+
+
+	$cmb_demo->add_field( array(
+		'name'       => esc_html__( 'File path', 'mro-cit-cpt' ),
+		// 'desc'       => esc_html__( 'field description (optional)', 'mro-cit-cpt' ),
+		'id'         => $prefix . 'download',
+		'type'       => 'text',
+		// 'show_on_cb' => 'mro_cit_demo_hide_if_no_cats', // function should return a bool value
+		// 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
+		// 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
+		// 'on_front'        => false, // Optionally designate a field to wp-admin only
+		'repeatable'      => true,
+		// 'column'          => true, // Display field value in the admin post-listing columns
+	) );
+
+	$cmb_demo->add_field( array(
+		'name' => esc_html__( 'Video text', 'mro-cit-cpt' ),
+		// 'desc' => esc_html__( 'field description (optional)', 'mro-cit-cpt' ),
+		'id'   => $prefix . 'video_text',
+		'type'    => 'wysiwyg',
+		'options' => array(
+			'textarea_rows' => 5,
+		),
+	) );
+
+	$cmb_demo->add_field( array(
+		'name' => esc_html__( 'Video', 'mro-cit-cpt' ),
+		'desc' => sprintf(
+			/* translators: %s: link to codex.wordpress.org/Embeds */
+			esc_html__( 'Enter a youtube, twitter, or instagram URL. Supports services listed at %s.', 'mro-cit-cpt' ),
+			'<a href="https://codex.wordpress.org/Embeds">codex.wordpress.org/Embeds</a>'
+		),
+		'id'   => $prefix . 'video',
+		'type' => 'oembed',
+		'repeatable'      => true,
+	) );	
+
+	$cmb_demo->add_field( array(
+		'name' => esc_html__( 'Gallery text', 'mro-cit-cpt' ),
+		// 'desc' => esc_html__( 'field description (optional)', 'mro-cit-cpt' ),
+		'id'   => $prefix . 'gallery_text',
+		'type'    => 'wysiwyg',
+		'options' => array(
+			'textarea_rows' => 5,
+		),
+	) );
+
+	$cmb_demo->add_field( array(
+		'name'         => esc_html__( 'Photos', 'mro-cit-cpt' ),
+		'desc'         => esc_html__( 'Upload or add multiple images/attachments.', 'mro-cit-cpt' ),
+		'id'           => $prefix . 'gallery',
+		'type'         => 'file_list',
+		'preview_size' => array( 100, 100 ), // Default: array( 50, 50 )
+	) );
+
+	$cmb_demo->add_field( array(
+		'name' => esc_html__( 'Comments', 'mro-cit-cpt' ),
+		// 'desc' => esc_html__( 'field description (optional)', 'mro-cit-cpt' ),
+		'id'   => $prefix . 'comments',
+		'type'    => 'wysiwyg',
+		'options' => array(
+			'textarea_rows' => 5,
+		),
+	) );
+}
+
+
 add_action( 'cmb2_admin_init', 'mro_cit_register_migration_sidebar_metabox' );
 /**
  * Hook in and add a demo metabox. Can only happen on the 'cmb2_admin_init' or 'cmb2_init' hook.
