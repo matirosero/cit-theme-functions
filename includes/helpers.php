@@ -7,6 +7,19 @@
 
 
 /*
+ * Include CPT in certain archives
+ */
+function custom_post_type_cat_filter($query) {
+  if ( !is_admin() && $query->is_main_query() ) {
+    if ($query->is_category( array( 9, 16, 7 ) ) ) {
+      $query->set( 'post_type', array( 'post', 'cit_archive' ) );
+    }
+  }
+}
+
+add_action('pre_get_posts','custom_post_type_cat_filter');
+
+/*
  * Exclude categories from frontpage
  */
 function mro_cit_exclude_category( $query ) {
@@ -64,3 +77,4 @@ function mro_cit_custom_post_author_archive($query) {
     remove_action( 'pre_get_posts', 'custom_post_author_archive' );
 }
 add_action('pre_get_posts', 'mro_cit_custom_post_author_archive');
+
