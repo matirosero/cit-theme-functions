@@ -94,6 +94,14 @@ require_once( dirname( __FILE__ ) . '/includes/eventscalendar-custom-fields.php'
 
 
 /**
+ * Shortcodes.
+ *
+ * @since 0.1.0
+ */
+require_once( dirname( __FILE__ ) . '/includes/shortcodes.php' );
+
+
+/**
  * Widgets.
  *
  * @since 0.1.0
