@@ -59,6 +59,7 @@ function mro_cit_register_report_metabox() {
 		// 'desc'       => esc_html__( 'field description (optional)', 'mro-cit-cpt' ),
 		'id'         => $prefix . 'download_path',
 		'type'       => 'text',
+		'column'          => true,
 	) );
 
 
@@ -67,6 +68,7 @@ function mro_cit_register_report_metabox() {
 		'desc' => esc_html__( 'field description (optional)', 'mro-cit-cpt' ),
 		'id'   => $prefix . 'download_id',
 		'type' => 'text_small',
+		'column'          => true,
 		// 'repeatable' => true,
 		// 'column' => array(
 		// 	'name'     => esc_html__( 'Column Title', 'mro-cit-cpt' ), // Set the admin column title

@@ -13,6 +13,8 @@ add_filter( 'manage_edit-post_sortable_columns', 'mro_cit_sortable_post_columns'
 function mro_cit_sortable_post_columns( $columns ) {
     $columns['_mro_manual_author'] = '_mro_manual_author';
 
+    $columns['mro_cit_report_download_id'] = 'mro_cit_report_download_id';
+
     //To make a column 'un-sortable' remove it from the array
     //unset($columns['date']);
 
@@ -43,6 +45,22 @@ function mro_cit_sort_posts( $vars ) {
 				array(
 					'meta_key' => '_mro_manual_author',
 					'orderby' => 'meta_value'
+				)
+			);
+		}
+	}
+
+	if ( isset( $vars['post_type'] ) && 'cit_report' == $vars['post_type'] ) {
+
+		/* Check if 'orderby' is set to 'duration'. */
+		if ( isset( $vars['orderby'] ) && 'mro_cit_report_download_id' == $vars['orderby'] ) {
+
+			/* Merge the query vars with our custom variables. */
+			$vars = array_merge(
+				$vars,
+				array(
+					'meta_key' => 'mro_cit_report_download_id',
+					'orderby' => 'meta_value_num'
 				)
 			);
 		}
