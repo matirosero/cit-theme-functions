@@ -219,7 +219,7 @@ function mro_cit_register_migration_sidebar_metabox() {
 		'id'         => '_mro_old_url',
 		'type'       => 'text',
 		// 'default'    => esc_attr__( 'Hey there, I\'m a read-only field', 'mro-cit-cpt' ),
-		'save_field' => false, // Disables the saving of this field.
+		// 'save_field' => false, // Disables the saving of this field.
 		'attributes' => array(
 			// 'disabled' => 'disabled',
 			// 'readonly' => 'readonly',
@@ -280,19 +280,19 @@ function mro_cit_register_migration_metabox() {
 		'column'          => true,
 	) );
 
-	$cmb_demo->add_field( array(
-		'name'       => esc_html__( 'Old URL', 'mro-cit-cpt' ),
-		'desc'       => esc_html__( 'Read-only: URL on old site', 'mro-cit-cpt' ),
-		'id'         => '_mro_old_url',
-		'type'       => 'text',
-		// 'default'    => esc_attr__( 'Hey there, I\'m a read-only field', 'mro-cit-cpt' ),
-		'save_field' => false, // Disables the saving of this field.
-		'attributes' => array(
-			'disabled' => 'disabled',
-			'readonly' => 'readonly',
-		),
-		'before_field'  => 'link_to_old_url',
-	) );
+	// $cmb_demo->add_field( array(
+	// 	'name'       => esc_html__( 'Old URL', 'mro-cit-cpt' ),
+	// 	'desc'       => esc_html__( 'Read-only: URL on old site', 'mro-cit-cpt' ),
+	// 	'id'         => '_mro_old_url',
+	// 	'type'       => 'text',
+	// 	// 'default'    => esc_attr__( 'Hey there, I\'m a read-only field', 'mro-cit-cpt' ),
+	// 	'save_field' => false, // Disables the saving of this field.
+	// 	'attributes' => array(
+	// 		'disabled' => 'disabled',
+	// 		'readonly' => 'readonly',
+	// 	),
+	// 	'before_field'  => 'link_to_old_url',
+	// ) );
 
 	$cmb_demo->add_field( array(
 		'name'       => esc_html__( 'Manual date', 'mro-cit-cpt' ),
