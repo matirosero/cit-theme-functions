@@ -274,11 +274,11 @@ function mro_cit_register_migration_metabox() {
 		'id'         => '_mro_manual_author',
 		'type'       => 'text',
 		// 'default'    => esc_attr__( 'Hey there, I\'m a read-only field', 'mro-cit-cpt' ),
-		'save_field' => false, // Disables the saving of this field.
-		'attributes' => array(
-			'disabled' => 'disabled',
-			'readonly' => 'readonly',
-		),
+		// 'save_field' => false, // Disables the saving of this field.
+		// 'attributes' => array(
+		// 	'disabled' => 'disabled',
+		// 	'readonly' => 'readonly',
+		// ),
 		'column'          => true,
 	) );
 
