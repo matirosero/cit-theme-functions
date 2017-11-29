@@ -27,17 +27,13 @@ function mro_cit_board_members($atts) {
 	 */
 	$args = array(
 
-
-
 		// Type & Status Parameters
 		'post_type'   => 'cit_board_members',
 		'post_status' => 'publish',
 
 		// Order & Orderby Parameters
 		'order'               => 'DESC',
-		'orderby'             => 'name',
-
-		// Pagination Parameters
+		// 'orderby'             => 'name',
 		'posts_per_page'         => -1,
 
 		// Parameters relating to caching
@@ -52,13 +48,24 @@ function mro_cit_board_members($atts) {
     if( ! $query->have_posts() ) :
         return false;
     else :
-    	$content = '';
+    	$content = '<div class="row small-up-2 medium-up-3">';
 
 		while( $query->have_posts() ) : $query->the_post();
 
-            $content .= '<h3 class="entry-title"><a href="' . get_permalink() . '">' . get_the_title() . '</a></h3>';
+            $content .= '<div class="profile-block column column-block">
+            	<a href="' . get_permalink() . '">'.
+            	get_the_post_thumbnail($post->ID,'thumbnail', array( 'class' => 'profile-image' )).'</a>
+            	<h3 class="entry-title"><a href="' . get_permalink() . '">' . get_the_title() . '</a></h3>';
+
+            if ( get_post_meta( $post->ID, 'mro_cit_board_member_position', true ) ) :
+            	$content .= '<div class="profile-meta"><span class="profile-position">'.get_post_meta( $post->ID, 'mro_cit_board_member_position', true ) .'</span></div>';
+            endif;
+
+            	$content .= '</div>';
 
         endwhile; 
+
+        $content .= '<div>';
 
         wp_reset_postdata();
 

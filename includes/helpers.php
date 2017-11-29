@@ -24,7 +24,7 @@ add_action('pre_get_posts','custom_post_type_cat_filter');
  */
 function mro_cit_exclude_category( $query ) {
     if ( ( $query->is_home() && $query->is_main_query() ) || ( $query->is_category( array( 15, 13 ) ) && $query->is_main_query() ) ) {
-        $query->set( 'cat', '-1, -113' );
+        $query->set( 'cat', '-1, -115' );
     }
 }
 add_action( 'pre_get_posts', 'mro_cit_exclude_category' );
