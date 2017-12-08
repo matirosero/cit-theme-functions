@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CIT Theme Functions\n"
 "POT-Creation-Date: 2017-12-08 11:41-0600\n"
-"PO-Revision-Date: 2017-12-08 11:57-0600\n"
+"PO-Revision-Date: 2017-12-08 15:08-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_PE\n"
@@ -91,7 +91,7 @@ msgstr ""
 #: includes/demo-register-custom-fields.php:65
 #: vendor/cmb2/example-functions.php:163
 msgid "Read-only Disabled Field"
-msgstr ""
+msgstr "Campo desactivado"
 
 #: includes/demo-register-custom-fields.php:69
 #: vendor/cmb2/example-functions.php:167
@@ -267,7 +267,7 @@ msgstr ""
 #: includes/register-custom-fields.php:127
 #: vendor/cmb2/example-functions.php:395
 msgid "Upload an image or enter a URL."
-msgstr ""
+msgstr "Subir una imagen o introducir un URL."
 
 #: includes/demo-register-custom-fields.php:303
 #: vendor/cmb2/example-functions.php:401
@@ -278,7 +278,7 @@ msgstr "Archivos múltiples"
 #: includes/register-custom-fields.php:170
 #: vendor/cmb2/example-functions.php:402
 msgid "Upload or add multiple images/attachments."
-msgstr ""
+msgstr "﻿Subir o añadir varias imágenes."
 
 #: includes/demo-register-custom-fields.php:311
 #: vendor/cmb2/example-functions.php:409
@@ -456,11 +456,11 @@ msgstr ""
 
 #: includes/register-cpt.php:150
 msgid "Unknowns"
-msgstr ""
+msgstr "Desconocidos"
 
 #: includes/register-cpt.php:151
 msgid "Unknown"
-msgstr ""
+msgstr "Desconocido"
 
 #: includes/register-cpt.php:152
 msgid "All Unknowns"
@@ -496,7 +496,7 @@ msgstr ""
 
 #: includes/register-cpt.php:164
 msgid "Unknown items"
-msgstr ""
+msgstr "Elementos desconocidos"
 
 #: includes/register-cpt.php:192
 msgid "Board members"
@@ -754,11 +754,11 @@ msgstr "Presentación"
 
 #: includes/register-custom-fields.php:112
 msgid "Add another Presentation"
-msgstr ""
+msgstr "Añadir otra presentación"
 
 #: includes/register-custom-fields.php:113
 msgid "Remove Presentation"
-msgstr ""
+msgstr "Eliminar presentación"
 
 #: includes/register-custom-fields.php:120
 msgid "File name"
@@ -766,7 +766,7 @@ msgstr "Nombre de archivo"
 
 #: includes/register-custom-fields.php:126
 msgid "Upload file"
-msgstr ""
+msgstr "Subir archivo"
 
 #: includes/register-custom-fields.php:136
 msgid "Video text"
@@ -782,7 +782,7 @@ msgstr "Texto galería"
 
 #: includes/register-custom-fields.php:169
 msgid "Photos"
-msgstr ""
+msgstr "Fotos"
 
 #: includes/register-custom-fields.php:177
 msgid "Evaluación de la actividad"
@@ -820,7 +820,7 @@ msgstr ""
 #: includes/register-custom-fields.php:314
 #: includes/register-custom-fields.php:327
 msgid "Read-only"
-msgstr ""
+msgstr "Solo lectura"
 
 #: includes/register-custom-fields.php:326
 msgid "Yoast SEO Description"
@@ -1018,7 +1018,7 @@ msgstr "Entrada {#}"
 
 #: vendor/cmb2/example-functions.php:487
 msgid "Add Another Entry"
-msgstr ""
+msgstr "Agregar otra Entrada"
 
 #: vendor/cmb2/example-functions.php:488
 msgid "Remove Entry"
@@ -1026,7 +1026,7 @@ msgstr ""
 
 #: vendor/cmb2/example-functions.php:501
 msgid "Entry Title"
-msgstr ""
+msgstr "Título de la entrada"
 
 #: vendor/cmb2/example-functions.php:508
 msgid "Description"
@@ -1074,7 +1074,7 @@ msgstr ""
 
 #: vendor/cmb2/example-functions.php:590
 msgid "User Field"
-msgstr ""
+msgstr "Campo de usuario"
 
 #: vendor/cmb2/example-functions.php:610
 msgid "Category Metabox"
@@ -1126,7 +1126,7 @@ msgstr "Haga clic para alternar"
 
 #: vendor/cmb2/includes/CMB2_Ajax.php:75
 msgid "Please Try Again"
-msgstr ""
+msgstr "Por favor inténtalo de nuevo"
 
 #: vendor/cmb2/includes/CMB2_Ajax.php:181
 msgid "Remove Embed"
@@ -1192,7 +1192,7 @@ msgstr ""
 #: vendor/cmb2/includes/CMB2_Field.php:1197
 #: vendor/cmb2/includes/CMB2_Field.php:1201
 msgid "None"
-msgstr ""
+msgstr "Ninguno"
 
 #: vendor/cmb2/includes/CMB2_Field.php:1262
 msgid "Sorry, this field does not have a cmb_id specified."
@@ -1264,7 +1264,7 @@ msgstr "Anterior"
 
 #: vendor/cmb2/includes/CMB2_JS.php:145
 msgid "Today"
-msgstr ""
+msgstr "Hoy"
 
 #: vendor/cmb2/includes/CMB2_JS.php:146 vendor/cmb2/includes/CMB2_JS.php:156
 msgid "Done"
@@ -1292,7 +1292,7 @@ msgstr ""
 
 #: vendor/cmb2/includes/CMB2_JS.php:155
 msgid "Now"
-msgstr ""
+msgstr "Ahora"
 
 #: vendor/cmb2/includes/CMB2_JS.php:157
 msgctxt ""
@@ -1303,11 +1303,11 @@ msgstr ""
 
 #: vendor/cmb2/includes/CMB2_JS.php:163
 msgid "Use this file"
-msgstr ""
+msgstr "Usar este archivo"
 
 #: vendor/cmb2/includes/CMB2_JS.php:164
 msgid "Use these files"
-msgstr ""
+msgstr "Usar estos archivos"
 
 #: vendor/cmb2/includes/CMB2_JS.php:165
 #: vendor/cmb2/includes/types/CMB2_Type_File_Base.php:63
@@ -1317,7 +1317,7 @@ msgstr ""
 #: vendor/cmb2/includes/CMB2_JS.php:166 vendor/cmb2/includes/CMB2_Types.php:412
 #: vendor/cmb2/includes/types/CMB2_Type_File_Base.php:83
 msgid "Remove"
-msgstr ""
+msgstr "Quitar"
 
 #: vendor/cmb2/includes/CMB2_JS.php:168
 #: vendor/cmb2/includes/types/CMB2_Type_File_Base.php:81
@@ -1334,7 +1334,7 @@ msgstr ""
 
 #: vendor/cmb2/includes/CMB2_Options_Hookup.php:113
 msgid "Nothing to update."
-msgstr ""
+msgstr "No hay nada que actualizar."
 
 #: vendor/cmb2/includes/CMB2_Types.php:231
 msgid "Custom CMB2 field type classes must extend CMB2_Type_Base."

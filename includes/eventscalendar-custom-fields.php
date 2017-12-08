@@ -12,7 +12,7 @@ function mro_cit_register_venue_extra_metabox() {
 	 */
 	$cmb_demo = new_cmb2_box( array(
 		'id'            => $prefix . 'metabox',
-		'title'         => esc_html__( 'Additional information', 'mro-cit-cpt' ),
+		'title'         => esc_html__( 'Additional information', 'mro-cit-functions' ),
 		'object_types'  => array( 
 			'tribe_venue' 
 		), // Post type
@@ -21,8 +21,8 @@ function mro_cit_register_venue_extra_metabox() {
 	) );
 
 	$cmb_demo->add_field( array(
-		'name' => esc_html__( 'Dirección tica', 'mro-cit-cpt' ),
-		// 'desc' => esc_html__( 'field description (optional)', 'mro-cit-cpt' ),
+		'name' => esc_html__( 'Dirección tica', 'mro-cit-functions' ),
+		// 'desc' => esc_html__( 'field description (optional)', 'mro-cit-functions' ),
 		'id'   => $prefix . 'event-venue-direccion-tica',
 		'type' => 'textarea_small',
 	) );
