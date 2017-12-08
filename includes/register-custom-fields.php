@@ -15,7 +15,7 @@ function mro_cit_register_board_member_metabox() {
 
 	$cmb_demo = new_cmb2_box( array(
 		'id'            => $prefix . 'metabox',
-		'title'         => esc_html__( 'Additional information', 'mro-cit-cpt' ),
+		'title'         => esc_html__( 'Additional information', 'mro-cit-functions' ),
 		'object_types'  => array( 
 			'cit_board_members' 
 		), // Post type
@@ -24,15 +24,15 @@ function mro_cit_register_board_member_metabox() {
 	) );
 
 	$cmb_demo->add_field( array(
-		'name'       => esc_html__( 'Position', 'mro-cit-cpt' ),
-		// 'desc'       => esc_html__( 'field description (optional)', 'mro-cit-cpt' ),
+		'name'       => esc_html__( 'Position', 'mro-cit-functions' ),
+		// 'desc'       => esc_html__( 'field description (optional)', 'mro-cit-functions' ),
 		'id'         => $prefix . 'position',
 		'type'       => 'text',
 	) );
 
 	$cmb_demo->add_field( array(
-		'name' => esc_html__( 'Email', 'mro-cit-cpt' ),
-		// 'desc' => esc_html__( 'field description (optional)', 'mro-cit-cpt' ),
+		'name' => esc_html__( 'Email', 'mro-cit-functions' ),
+		// 'desc' => esc_html__( 'field description (optional)', 'mro-cit-functions' ),
 		'id'   => $prefix . 'email',
 		'type' => 'text_email',
 		// 'repeatable' => true,
@@ -45,7 +45,7 @@ function mro_cit_register_report_metabox() {
 
 	$cmb_demo = new_cmb2_box( array(
 		'id'            => $prefix . 'downloads_metabox',
-		'title'         => esc_html__( 'Report download information', 'mro-cit-cpt' ),
+		'title'         => esc_html__( 'Report download information', 'mro-cit-functions' ),
 		'object_types'  => array( 
 			'cit_report' 
 		), // Post type
@@ -55,8 +55,8 @@ function mro_cit_register_report_metabox() {
 
 
 	$cmb_demo->add_field( array(
-		'name'       => esc_html__( 'File path', 'mro-cit-cpt' ),
-		// 'desc'       => esc_html__( 'field description (optional)', 'mro-cit-cpt' ),
+		'name'       => esc_html__( 'File path', 'mro-cit-functions' ),
+		// 'desc'       => esc_html__( 'field description (optional)', 'mro-cit-functions' ),
 		'id'         => $prefix . 'download_path',
 		'type'       => 'text',
 		'column'          => true,
@@ -64,22 +64,22 @@ function mro_cit_register_report_metabox() {
 
 
 	$cmb_demo->add_field( array(
-		'name' => esc_html__( 'Download ID', 'mro-cit-cpt' ),
-		'desc' => esc_html__( 'field description (optional)', 'mro-cit-cpt' ),
+		'name' => esc_html__( 'Download ID', 'mro-cit-functions' ),
+		'desc' => esc_html__( 'field description (optional)', 'mro-cit-functions' ),
 		'id'   => $prefix . 'download_id',
 		'type' => 'text_small',
 		'column'          => true,
 		// 'repeatable' => true,
 		// 'column' => array(
-		// 	'name'     => esc_html__( 'Column Title', 'mro-cit-cpt' ), // Set the admin column title
+		// 	'name'     => esc_html__( 'Column Title', 'mro-cit-functions' ), // Set the admin column title
 		// 	'position' => 2, // Set as the second column.
 		// );
 		// 'display_cb' => 'mro_cit_demo_display_text_small_column', // Output the display of the column values through a callback.
 	) );
 
 	$cmb_demo->add_field( array(
-		'name' => esc_html__( 'Download shortcode', 'mro-cit-cpt' ),
-		'desc' => esc_html__( 'Utilizar el botón "Add Download" para escoger el archivo. No poner nada más.', 'mro-cit-cpt' ),
+		'name' => esc_html__( 'Download shortcode', 'mro-cit-functions' ),
+		'desc' => esc_html__( 'Utilizar el botón "Add Download" para escoger el archivo. No poner nada más.', 'mro-cit-functions' ),
 		'id'   => $prefix . 'download_shortcode',
 		'type'    => 'wysiwyg',
 		'options' => array(
@@ -95,7 +95,7 @@ function mro_cit_register_events_metabox() {
 
 	$cmb_demo = new_cmb2_box( array(
 		'id'            => $prefix . 'sections_metabox',
-		'title'         => esc_html__( 'Additional information', 'mro-cit-cpt' ),
+		'title'         => esc_html__( 'Additional information', 'mro-cit-functions' ),
 		'object_types'  => array( 
 			'cit_past_event' 
 		), // Post type
@@ -108,23 +108,23 @@ function mro_cit_register_events_metabox() {
         'id'          => $prefix . 'presentations',
         'type'        => 'group',
         'options'     => array(
-            'group_title'   => __( 'Presentation', 'mro-cit-cpt' ) . ' {#}', // {#} gets replaced by row number
-            'add_button'    => __( 'Add another Presentation', 'mro-cit-cpt' ),
-            'remove_button' => __( 'Remove Presentation', 'mro-cit-cpt' ),
+            'group_title'   => __( 'Presentation', 'mro-cit-functions' ) . ' {#}', // {#} gets replaced by row number
+            'add_button'    => __( 'Add another Presentation', 'mro-cit-functions' ),
+            'remove_button' => __( 'Remove Presentation', 'mro-cit-functions' ),
             'sortable'      => true, // beta
         ),
     ) );
 
         //* Title
     $cmb_demo->add_group_field( $group_download, array(
-        'name'    => __( 'File name', 'mro-cit-cpt' ),
+        'name'    => __( 'File name', 'mro-cit-functions' ),
         'id'      => $prefix . 'presentation_name',
         'type'    => 'text',
     ) );
 
 	$cmb_demo->add_group_field( $group_download, array(
-		'name' => esc_html__( 'Upload file', 'mro-cit-cpt' ),
-		'desc' => esc_html__( 'Upload an image or enter a URL.', 'mro-cit-cpt' ),
+		'name' => esc_html__( 'Upload file', 'mro-cit-functions' ),
+		'desc' => esc_html__( 'Upload an image or enter a URL.', 'mro-cit-functions' ),
 		'id'   => $prefix . 'presentation_file',
 		'type' => 'file',
 		'query_args' => array(
@@ -133,8 +133,8 @@ function mro_cit_register_events_metabox() {
 	) );
 
 	$cmb_demo->add_field( array(
-		'name' => esc_html__( 'Video text', 'mro-cit-cpt' ),
-		// 'desc' => esc_html__( 'field description (optional)', 'mro-cit-cpt' ),
+		'name' => esc_html__( 'Video text', 'mro-cit-functions' ),
+		// 'desc' => esc_html__( 'field description (optional)', 'mro-cit-functions' ),
 		'id'   => $prefix . 'video_text',
 		'type'    => 'wysiwyg',
 		'options' => array(
@@ -143,10 +143,10 @@ function mro_cit_register_events_metabox() {
 	) );
 
 	$cmb_demo->add_field( array(
-		'name' => esc_html__( 'Video', 'mro-cit-cpt' ),
+		'name' => esc_html__( 'Video', 'mro-cit-functions' ),
 		'desc' => sprintf(
 			/* translators: %s: link to codex.wordpress.org/Embeds */
-			esc_html__( 'Enter a youtube, twitter, or instagram URL. Supports services listed at %s.', 'mro-cit-cpt' ),
+			esc_html__( 'Enter a youtube, twitter, or instagram URL. Supports services listed at %s.', 'mro-cit-functions' ),
 			'<a href="https://codex.wordpress.org/Embeds">codex.wordpress.org/Embeds</a>'
 		),
 		'id'   => $prefix . 'video',
@@ -155,8 +155,8 @@ function mro_cit_register_events_metabox() {
 	) );	
 
 	$cmb_demo->add_field( array(
-		'name' => esc_html__( 'Gallery text', 'mro-cit-cpt' ),
-		// 'desc' => esc_html__( 'field description (optional)', 'mro-cit-cpt' ),
+		'name' => esc_html__( 'Gallery text', 'mro-cit-functions' ),
+		// 'desc' => esc_html__( 'field description (optional)', 'mro-cit-functions' ),
 		'id'   => $prefix . 'gallery_text',
 		'type'    => 'wysiwyg',
 		'sanitization_cb' => false,
@@ -166,16 +166,16 @@ function mro_cit_register_events_metabox() {
 	) );
 
 	$cmb_demo->add_field( array(
-		'name'         => esc_html__( 'Photos', 'mro-cit-cpt' ),
-		'desc'         => esc_html__( 'Upload or add multiple images/attachments.', 'mro-cit-cpt' ),
+		'name'         => esc_html__( 'Photos', 'mro-cit-functions' ),
+		'desc'         => esc_html__( 'Upload or add multiple images/attachments.', 'mro-cit-functions' ),
 		'id'           => $prefix . 'gallery',
 		'type'         => 'file_list',
 		'preview_size' => array( 100, 100 ), // Default: array( 50, 50 )
 	) );
 
 	$cmb_demo->add_field( array(
-		'name' => esc_html__( 'Evaluación de la actividad', 'mro-cit-cpt' ),
-		// 'desc' => esc_html__( 'field description (optional)', 'mro-cit-cpt' ),
+		'name' => esc_html__( 'Evaluación de la actividad', 'mro-cit-functions' ),
+		// 'desc' => esc_html__( 'field description (optional)', 'mro-cit-functions' ),
 		'id'   => $prefix . 'evaluation',
 		'type'    => 'wysiwyg',
 		'options' => array(
@@ -197,7 +197,7 @@ function mro_cit_register_migration_sidebar_metabox() {
 	 */
 	$cmb_demo = new_cmb2_box( array(
 		'id'            => $prefix . 'metabox',
-		'title'         => esc_html__( 'Migration Information', 'mro-cit-cpt' ),
+		'title'         => esc_html__( 'Migration Information', 'mro-cit-functions' ),
 		'object_types'  => array( 
 			'page', 
 			'post', 
@@ -216,11 +216,11 @@ function mro_cit_register_migration_sidebar_metabox() {
 	) );
 
 	$cmb_demo->add_field( array(
-		'name'       => esc_html__( 'Old URL', 'mro-cit-cpt' ),
-		// 'desc'       => esc_html__( 'Read-only: URL on old site', 'mro-cit-cpt' ),
+		'name'       => esc_html__( 'Old URL', 'mro-cit-functions' ),
+		// 'desc'       => esc_html__( 'Read-only: URL on old site', 'mro-cit-functions' ),
 		'id'         => '_mro_old_url',
 		'type'       => 'text',
-		// 'default'    => esc_attr__( 'Hey there, I\'m a read-only field', 'mro-cit-cpt' ),
+		// 'default'    => esc_attr__( 'Hey there, I\'m a read-only field', 'mro-cit-functions' ),
 		// 'save_field' => false, // Disables the saving of this field.
 		'attributes' => array(
 			// 'disabled' => 'disabled',
@@ -243,7 +243,7 @@ function mro_cit_register_migration_metabox() {
 	 */
 	$cmb_demo = new_cmb2_box( array(
 		'id'            => $prefix . 'metabox',
-		'title'         => esc_html__( 'Migration Information', 'mro-cit-cpt' ),
+		'title'         => esc_html__( 'Migration Information', 'mro-cit-functions' ),
 		'object_types'  => array( 
 			'page', 
 			'post', 
@@ -269,11 +269,11 @@ function mro_cit_register_migration_metabox() {
 
 
 	$cmb_demo->add_field( array(
-		'name'       => esc_html__( 'Manual author', 'mro-cit-cpt' ),
-		'desc'       => esc_html__( 'Read-only: author', 'mro-cit-cpt' ),
+		'name'       => esc_html__( 'Manual author', 'mro-cit-functions' ),
+		'desc'       => esc_html__( 'Read-only: author', 'mro-cit-functions' ),
 		'id'         => '_mro_manual_author',
 		'type'       => 'text',
-		// 'default'    => esc_attr__( 'Hey there, I\'m a read-only field', 'mro-cit-cpt' ),
+		// 'default'    => esc_attr__( 'Hey there, I\'m a read-only field', 'mro-cit-functions' ),
 		// 'save_field' => false, // Disables the saving of this field.
 		// 'attributes' => array(
 		// 	'disabled' => 'disabled',
@@ -283,11 +283,11 @@ function mro_cit_register_migration_metabox() {
 	) );
 
 	// $cmb_demo->add_field( array(
-	// 	'name'       => esc_html__( 'Old URL', 'mro-cit-cpt' ),
-	// 	'desc'       => esc_html__( 'Read-only: URL on old site', 'mro-cit-cpt' ),
+	// 	'name'       => esc_html__( 'Old URL', 'mro-cit-functions' ),
+	// 	'desc'       => esc_html__( 'Read-only: URL on old site', 'mro-cit-functions' ),
 	// 	'id'         => '_mro_old_url',
 	// 	'type'       => 'text',
-	// 	// 'default'    => esc_attr__( 'Hey there, I\'m a read-only field', 'mro-cit-cpt' ),
+	// 	// 'default'    => esc_attr__( 'Hey there, I\'m a read-only field', 'mro-cit-functions' ),
 	// 	'save_field' => false, // Disables the saving of this field.
 	// 	'attributes' => array(
 	// 		'disabled' => 'disabled',
@@ -297,11 +297,11 @@ function mro_cit_register_migration_metabox() {
 	// ) );
 
 	$cmb_demo->add_field( array(
-		'name'       => esc_html__( 'Manual date', 'mro-cit-cpt' ),
-		'desc'       => esc_html__( 'Read-only: date from text itself', 'mro-cit-cpt' ),
+		'name'       => esc_html__( 'Manual date', 'mro-cit-functions' ),
+		'desc'       => esc_html__( 'Read-only: date from text itself', 'mro-cit-functions' ),
 		'id'         => '_mro_manual_date',
 		'type'       => 'text',
-		// 'default'    => esc_attr__( 'Hey there, I\'m a read-only field', 'mro-cit-cpt' ),
+		// 'default'    => esc_attr__( 'Hey there, I\'m a read-only field', 'mro-cit-functions' ),
 		'save_field' => false, // Disables the saving of this field.
 		'attributes' => array(
 			'disabled' => 'disabled',
@@ -310,11 +310,11 @@ function mro_cit_register_migration_metabox() {
 	) );
 
 	$cmb_demo->add_field( array(
-		'name'       => esc_html__( 'Yoast SEO Title', 'mro-cit-cpt' ),
-		'desc'       => esc_html__( 'Read-only', 'mro-cit-cpt' ),
+		'name'       => esc_html__( 'Yoast SEO Title', 'mro-cit-functions' ),
+		'desc'       => esc_html__( 'Read-only', 'mro-cit-functions' ),
 		'id'         => '_yoast_wpseo_title',
 		'type'       => 'text',
-		// 'default'    => esc_attr__( 'Hey there, I\'m a read-only field', 'mro-cit-cpt' ),
+		// 'default'    => esc_attr__( 'Hey there, I\'m a read-only field', 'mro-cit-functions' ),
 		'save_field' => false, // Disables the saving of this field.
 		'attributes' => array(
 			'disabled' => 'disabled',
@@ -323,11 +323,11 @@ function mro_cit_register_migration_metabox() {
 	) );
 
 	$cmb_demo->add_field( array(
-		'name'       => esc_html__( 'Yoast SEO Description', 'mro-cit-cpt' ),
-		'desc'       => esc_html__( 'Read-only', 'mro-cit-cpt' ),
+		'name'       => esc_html__( 'Yoast SEO Description', 'mro-cit-functions' ),
+		'desc'       => esc_html__( 'Read-only', 'mro-cit-functions' ),
 		'id'         => '_yoast_wpseo_metadesc',
 		'type'       => 'textarea',
-		// 'default'    => esc_attr__( 'Hey there, I\'m a read-only field', 'mro-cit-cpt' ),
+		// 'default'    => esc_attr__( 'Hey there, I\'m a read-only field', 'mro-cit-functions' ),
 		'save_field' => false, // Disables the saving of this field.
 		'attributes' => array(
 			'disabled' => 'disabled',

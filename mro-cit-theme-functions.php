@@ -28,7 +28,7 @@ if ( file_exists( __DIR__ . '/vendor/cmb2/init.php' ) ) {
  * @since 0.1.0
  */
 function mro_cit_load_textdomain() {
-	load_plugin_textdomain( 'mro-cit-cpt', false, basename( dirname( __FILE__ ) ) . '/languages' );
+	load_plugin_textdomain( 'mro-cit-functions', false, basename( dirname( __FILE__ ) ) . '/languages' );
 }
 add_action( 'plugins_loaded', 'mro_cit_load_textdomain' );
 
