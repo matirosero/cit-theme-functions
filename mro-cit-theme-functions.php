@@ -63,9 +63,8 @@ require_once( dirname( __FILE__ ) . '/includes/register-taxonomies.php' );
  * @since 0.1.0
  */
 require_once( dirname( __FILE__ ) . '/includes/demo-register-custom-fields.php' );
-
 require_once( dirname( __FILE__ ) . '/includes/register-custom-fields.php' );
-
+require_once( dirname( __FILE__ ) . '/includes/user-custom-fields.php' );
 
 /**
  * Sortable columns.
@@ -91,6 +90,14 @@ require_once( dirname( __FILE__ ) . '/includes/add-old-url-column.php' );
  */
 require_once( dirname( __FILE__ ) . '/includes/eventscalendar-helpers.php' );
 require_once( dirname( __FILE__ ) . '/includes/eventscalendar-custom-fields.php' );
+
+
+/**
+ * Caldera.
+ *
+ * @since 0.1.0
+ */
+require_once( dirname( __FILE__ ) . '/includes/caldera-helpers.php' );
 
 
 /**
