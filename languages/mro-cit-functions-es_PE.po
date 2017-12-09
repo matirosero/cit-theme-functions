@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: CIT Theme Functions\n"
-"POT-Creation-Date: 2017-12-08 11:41-0600\n"
-"PO-Revision-Date: 2017-12-08 15:08-0600\n"
+"POT-Creation-Date: 2017-12-09 17:14-0600\n"
+"PO-Revision-Date: 2017-12-09 17:15-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_PE\n"
@@ -56,25 +56,26 @@ msgstr ""
 #: includes/demo-register-custom-fields.php:266
 #: includes/demo-register-custom-fields.php:273
 #: includes/demo-register-custom-fields.php:287
-#: includes/register-custom-fields.php:68 vendor/cmb2/example-functions.php:131
-#: vendor/cmb2/example-functions.php:144 vendor/cmb2/example-functions.php:157
-#: vendor/cmb2/example-functions.php:164 vendor/cmb2/example-functions.php:177
-#: vendor/cmb2/example-functions.php:185 vendor/cmb2/example-functions.php:194
-#: vendor/cmb2/example-functions.php:202 vendor/cmb2/example-functions.php:217
-#: vendor/cmb2/example-functions.php:225 vendor/cmb2/example-functions.php:233
-#: vendor/cmb2/example-functions.php:250 vendor/cmb2/example-functions.php:259
-#: vendor/cmb2/example-functions.php:272 vendor/cmb2/example-functions.php:279
-#: vendor/cmb2/example-functions.php:286 vendor/cmb2/example-functions.php:300
-#: vendor/cmb2/example-functions.php:313 vendor/cmb2/example-functions.php:326
-#: vendor/cmb2/example-functions.php:338 vendor/cmb2/example-functions.php:347
-#: vendor/cmb2/example-functions.php:355 vendor/cmb2/example-functions.php:364
-#: vendor/cmb2/example-functions.php:371 vendor/cmb2/example-functions.php:385
-#: vendor/cmb2/example-functions.php:457 vendor/cmb2/example-functions.php:548
-#: vendor/cmb2/example-functions.php:556 vendor/cmb2/example-functions.php:563
-#: vendor/cmb2/example-functions.php:570 vendor/cmb2/example-functions.php:577
-#: vendor/cmb2/example-functions.php:584 vendor/cmb2/example-functions.php:591
-#: vendor/cmb2/example-functions.php:618 vendor/cmb2/example-functions.php:626
-#: vendor/cmb2/example-functions.php:633 vendor/cmb2/example-functions.php:678
+#: includes/register-custom-fields.php:68 includes/user-custom-fields.php:22
+#: vendor/cmb2/example-functions.php:131 vendor/cmb2/example-functions.php:144
+#: vendor/cmb2/example-functions.php:157 vendor/cmb2/example-functions.php:164
+#: vendor/cmb2/example-functions.php:177 vendor/cmb2/example-functions.php:185
+#: vendor/cmb2/example-functions.php:194 vendor/cmb2/example-functions.php:202
+#: vendor/cmb2/example-functions.php:217 vendor/cmb2/example-functions.php:225
+#: vendor/cmb2/example-functions.php:233 vendor/cmb2/example-functions.php:250
+#: vendor/cmb2/example-functions.php:259 vendor/cmb2/example-functions.php:272
+#: vendor/cmb2/example-functions.php:279 vendor/cmb2/example-functions.php:286
+#: vendor/cmb2/example-functions.php:300 vendor/cmb2/example-functions.php:313
+#: vendor/cmb2/example-functions.php:326 vendor/cmb2/example-functions.php:338
+#: vendor/cmb2/example-functions.php:347 vendor/cmb2/example-functions.php:355
+#: vendor/cmb2/example-functions.php:364 vendor/cmb2/example-functions.php:371
+#: vendor/cmb2/example-functions.php:385 vendor/cmb2/example-functions.php:457
+#: vendor/cmb2/example-functions.php:548 vendor/cmb2/example-functions.php:556
+#: vendor/cmb2/example-functions.php:563 vendor/cmb2/example-functions.php:570
+#: vendor/cmb2/example-functions.php:577 vendor/cmb2/example-functions.php:584
+#: vendor/cmb2/example-functions.php:591 vendor/cmb2/example-functions.php:618
+#: vendor/cmb2/example-functions.php:626 vendor/cmb2/example-functions.php:633
+#: vendor/cmb2/example-functions.php:678
 msgid "field description (optional)"
 msgstr ""
 
@@ -1000,6 +1001,35 @@ msgstr ""
 msgid "Weird Dates"
 msgstr ""
 
+#: includes/user-custom-fields.php:14 vendor/cmb2/example-functions.php:540
+msgid "User Profile Metabox"
+msgstr ""
+
+#: includes/user-custom-fields.php:21 vendor/cmb2/example-functions.php:547
+#: vendor/cmb2/example-functions.php:617
+msgid "Extra Info"
+msgstr "Información extra"
+
+#: includes/user-custom-fields.php:29
+msgid "Membership type"
+msgstr "Tipo de afiliación"
+
+#: includes/user-custom-fields.php:41
+msgid "Phone number"
+msgstr "Teléfono"
+
+#: includes/user-custom-fields.php:48
+msgid "Occupation"
+msgstr "Ocupación"
+
+#: includes/user-custom-fields.php:55
+msgid "Company"
+msgstr "Compañía"
+
+#: includes/user-custom-fields.php:64
+msgid "Country"
+msgstr "País"
+
 #: vendor/cmb2/example-functions.php:445
 msgid "About Page Metabox"
 msgstr ""
@@ -1043,14 +1073,6 @@ msgstr ""
 #: vendor/cmb2/example-functions.php:521
 msgid "Image Caption"
 msgstr ""
-
-#: vendor/cmb2/example-functions.php:540
-msgid "User Profile Metabox"
-msgstr ""
-
-#: vendor/cmb2/example-functions.php:547 vendor/cmb2/example-functions.php:617
-msgid "Extra Info"
-msgstr "Información extra"
 
 #: vendor/cmb2/example-functions.php:555
 msgid "Avatar"
