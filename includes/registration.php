@@ -118,8 +118,8 @@ function myplugin_registration_errors( $errors, $sanitized_user_login, $user_ema
     // Valid country
     if ( ! empty( $_POST['mro_cit_user_country'] ) && trim( $_POST['mro_cit_user_country'] ) != '' ) {
 
-        if ( ! mro_cit_validate_membership( $_POST['mro_cit_user_country'] ) ) {
-            $errors->add( 'membership_error', __( '<strong>ERROR</strong>: Please choose a valid country.', 'mydomain' ) );
+        if ( ! mro_cit_validate_country( $_POST['mro_cit_user_country'] ) ) {
+            $errors->add( 'country_error', __( '<strong>ERROR</strong>: Please choose a valid country.', 'mydomain' ) );
         }
     }
 

@@ -15,12 +15,19 @@ function mro_cit_validate_from_array($value, $valid_values) {
 
 function mro_cit_validate_membership( $value ) {
 	$valid_values = array(
-       'afiliado_personal',
-       'afiliado_enterprise',
-   	);
-   	if ( mro_cit_validate_from_array($value, $valid_values) ) {
-   		return true;
-   	}
+     'afiliado_personal',
+     'afiliado_enterprise',
+ 	);
+ 	if ( mro_cit_validate_from_array($value, $valid_values) ) {
+ 		return true;
+ 	}
+}
+
+function mro_cit_validate_country( $value ) {
+  $valid_values = countries_plain();
+  if ( mro_cit_validate_from_array($value, $valid_values) ) {
+    return true;
+  }
 }
 
 function sanitize_membership( $value ) {
