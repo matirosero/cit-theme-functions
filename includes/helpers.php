@@ -79,6 +79,16 @@ function mro_cit_custom_post_author_archive($query) {
 add_action('pre_get_posts', 'mro_cit_custom_post_author_archive');
 
 
+
+function countries_plain() {
+	$array = array();
+	$countries = country_list();
+	foreach ($countries as $country) {
+		$array[] = $country;
+	}
+	return $array;
+}
+
 function country_list() {
 	$countries = array(
 		'Costa Rica' => 'Costa Rica',

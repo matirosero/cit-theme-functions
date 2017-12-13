@@ -38,6 +38,13 @@ function mro_cit_register_user_profile_metabox() {
 	) );
 
 	$cmb_user->add_field( array(
+		'name' => __( 'Company', 'mro-cit-functions' ),
+		// 'desc' => __( 'field description (optional)', 'mro-cit-functions' ),
+		'id'   => $prefix . 'company',
+		'type' => 'text',
+	) );
+
+	$cmb_user->add_field( array(
 		'name' => __( 'Phone number', 'mro-cit-functions' ),
 		// 'desc' => __( 'field description (optional)', 'mro-cit-functions' ),
 		'id'   => $prefix . 'phone',
@@ -50,15 +57,6 @@ function mro_cit_register_user_profile_metabox() {
 		'id'   => $prefix . 'occupation',
 		'type' => 'text',
 	) );
-
-	$cmb_user->add_field( array(
-		'name' => __( 'Company', 'mro-cit-functions' ),
-		// 'desc' => __( 'field description (optional)', 'mro-cit-functions' ),
-		'id'   => $prefix . 'company',
-		'type' => 'text',
-	) );
-
-
 
 	$cmb_user->add_field( array(
 		'name'             => esc_html__( 'Country', 'mro-cit-functions' ),
