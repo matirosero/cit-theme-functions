@@ -39,8 +39,8 @@ function myplugin_register_form() {
 
                 <select class="cmb2_select" name="mro_cit_user_membership" id="mro_cit_user_membership">
 
-                    <option value="afiliado_personal" selected="selected">Afiliado Personal</option>
-                    <option value="afiliado_enterprise">Afiliado Enterprise</option>
+                    <option value="Afiliado Personal" selected="selected">Afiliado Personal</option>
+                    <option value="Afiliado Enterprise">Afiliado Enterprise</option>
 
                 </select>
              </label>

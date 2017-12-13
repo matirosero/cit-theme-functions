@@ -26,21 +26,42 @@ if ( !function_exists( 'wp_new_user_notification' ) ) {
 		// we want to reverse this for the plain text arena of emails.
 		$blogname = wp_specialchars_decode(get_option('blogname'), ENT_QUOTES);
 
+		$membership_type = $user->mro_cit_user_membership;
+
 		if ( 'user' !== $notify ) {
 			$switched_locale = switch_to_locale( get_locale() );
 
-			/* translators: %s: site title */
-			$message  = sprintf( __( 'Se ha registrado un nuevo afiliado en %s:' ), $blogname ) . "\r\n\r\n";
+			if ( $membership_type == 'Afiliado Enterprise' ) {
+				$subject = 'Solicitud de afiliación empresarial al Club de Investigación Tecnológica';
+
+				$message  = sprintf( __( 'Se ha registrado un nuevo afiliado en %s, y desea ser un Afiliado Empresarial.' ), $blogname ) . "\r\n\r\n";
+
+				$message .= sprintf( __( 'Empresa: %s' ), $user->mro_cit_user_company ) . "\r\n\r\n";
+
+				
+				$recipient = array(
+					get_option( 'admin_email' ),
+					'matirosero@icloud.com',
+				);
+
+			} else {
+				$subject = 'Nuevo afiliado personal al  Club de Investigación Tecnológica';
+
+				/* translators: %s: site title */
+				$message  = sprintf( __( 'Se ha registrado un nuevo afiliado en %s:' ), $blogname ) . "\r\n\r\n";
+				
+				$recipient = get_option( 'admin_email' );
+			}
+			
 			/* translators: %s: user login */
 			$message .= sprintf( __( 'Username: %s' ), $user->user_login ) . "\r\n\r\n";
 			/* translators: %s: user email address */
 			$message .= sprintf( __( 'Email: %s' ), $user->user_email ) . "\r\n";
-			$message .= 'Tipo de afiliado: ' . $user->mro_cit_user_membership . "\r\n\r\n";
 
 			$wp_new_user_notification_email_admin = array(
-				'to'      => get_option( 'admin_email' ),
+				'to'      => $recipient,
 				/* translators: Password change notification email subject. %s: Site title */
-				'subject' => __( '[%s] Nuevo afiliado' ),
+				'subject' => $subject,
 				'message' => $message,
 				'headers' => '',
 			);
@@ -109,7 +130,7 @@ if ( !function_exists( 'wp_new_user_notification' ) ) {
 
 
 		$message .= 'Saludos cordiales,' . "\r\n\r\n";
-		$message .= 'Club de Investigaci&oacute;n Tecnológica' . "\r\n";
+		$message .= 'Club de Investigación Tecnológica' . "\r\n";
 		$message .= site_url();
 
 		$wp_new_user_notification_email = array(

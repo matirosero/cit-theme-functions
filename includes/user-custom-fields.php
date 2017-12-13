@@ -31,8 +31,8 @@ function mro_cit_register_user_profile_metabox() {
 		'type'             => 'select',
 		'show_option_none' => true,
 		'options'          => array(
-			'afiliado_personal' => 'Afiliado Personal',
-			'afiliado_enterprise' => 'Afiliado Enterprise',
+			'Afiliado Personal' => 'Afiliado Personal',
+			'Afiliado Enterprise' => 'Afiliado Enterprise',
 		),
 		'after_field'  => '<p>La cuota anual para Afiliados Enterprise es $650. Le daremos seguimiento a su inscripción por correo.</p>',
 	) );
