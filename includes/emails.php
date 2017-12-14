@@ -4,10 +4,8 @@
  *
  * emails new users their login info
  * http://www.webtipblog.com/change-wordpress-user-registration-welcome-email/
+ * http://www.webtipblog.com/change-wordpress-user-registration-welcome-email/
  *
- * @author  Joe Sexton <joe@webtipblog.com>
- * @param   integer $user_id user id
- * @param   string $plaintext_pass optional password
  */
 if ( !function_exists( 'wp_new_user_notification' ) ) {
     function wp_new_user_notification( $user_id, $deprecated = null, $notify = '' ) {
