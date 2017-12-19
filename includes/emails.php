@@ -24,17 +24,21 @@ if ( !function_exists( 'wp_new_user_notification' ) ) {
 		// we want to reverse this for the plain text arena of emails.
 		$blogname = wp_specialchars_decode(get_option('blogname'), ENT_QUOTES);
 
-		$membership_type = $user->mro_cit_user_membership;
+		// $membership_type = $user->mro_cit_user_membership;
+
+		$user_roles = $user->roles;
 
 		if ( 'user' !== $notify ) {
 			$switched_locale = switch_to_locale( get_locale() );
 
-			if ( $membership_type == 'Afiliado Enterprise' ) {
+			// if ( $membership_type == 'Afiliado Enterprise' ) {
+			if ( in_array('afiliado_enterprise_pendiente', $user_roles) ) {
+
 				$subject = 'Solicitud de afiliación empresarial al Club de Investigación Tecnológica';
 
 				$message  = sprintf( __( 'Se ha registrado un nuevo afiliado en %s, y desea ser un Afiliado Empresarial.' ), $blogname ) . "\r\n\r\n";
 
-				$message .= sprintf( __( 'Empresa: %s' ), $user->mro_cit_user_company ) . "\r\n\r\n";
+				$message .= sprintf( __( 'Empresa: %s' ), $user->nickname ) . "\r\n\r\n";
 
 				
 				$recipient = array(
