@@ -41,6 +41,7 @@ add_action( 'plugins_loaded', 'mro_cit_load_textdomain' );
 require_once( dirname( __FILE__ ) . '/includes/helpers.php' );
 
 
+
 /**
  * Post types.
  *
@@ -62,6 +63,7 @@ require_once( dirname( __FILE__ ) . '/includes/register-taxonomies.php' );
  *
  * @since 0.1.0
  */
+require_once( dirname( __FILE__ ) . '/includes/cmb2-showon-filters.php' );
 require_once( dirname( __FILE__ ) . '/includes/demo-register-custom-fields.php' );
 require_once( dirname( __FILE__ ) . '/includes/register-custom-fields.php' );
 require_once( dirname( __FILE__ ) . '/includes/user-custom-fields.php' );
@@ -101,6 +103,7 @@ require_once( dirname( __FILE__ ) . '/includes/registration.php' );
 require_once( dirname( __FILE__ ) . '/includes/registration-helpers.php' );
 require_once( dirname( __FILE__ ) . '/includes/emails.php' );
 
+// require_once( dirname( __FILE__ ) . '/includes/registration-user-shortcodes.php' );
 
 /**
  * Caldera.
