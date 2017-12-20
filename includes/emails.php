@@ -40,7 +40,23 @@ if ( !function_exists( 'wp_new_user_notification' ) ) {
 
 				$message .= sprintf( __( 'Empresa: %s' ), $user->nickname ) . "\r\n\r\n";
 
-				
+				$message .= sprintf( __( 'País: %s' ), $user->mro_cit_user_country ) . "\r\n\r\n";
+
+				$message .= sprintf( __( 'Teléfono: %s' ), $user->mro_cit_user_phone ) . "\r\n\r\n";
+
+				$message .= sprintf( __( 'CONTACTO PRINCIPAL: %s' ), $user->nickname ) . "\r\n\r\n";
+
+				$message .= sprintf( __( 'Email: %s' ), $user->user_email ) . "\r\n";
+
+				$message .= sprintf( __( 'Nombre: %s' ), $user->user_first ) . ' ' . sprintf( __( 'Nombre de contacto: %s' ), $user->user_last ) . "\r\n";
+
+				$message .= sprintf( __( 'CONTACTO SECUNDARIO: %s' ), $user->nickname ) . "\r\n\r\n";
+
+				$message .= sprintf( __( 'Email: %s' ), $user->mro_cit_user_secondary_email ) . "\r\n";
+
+				$message .= sprintf( __( 'Nombre: %s' ), $user->mro_cit_user_secondary_first ) . ' ' . sprintf( __( 'Nombre de contacto: %s' ), $user->mro_cit_user_secondary_last ) . "\r\n";
+
+
 				$recipient = array(
 					get_option( 'admin_email' ),
 					'matirosero@icloud.com',
@@ -51,10 +67,10 @@ if ( !function_exists( 'wp_new_user_notification' ) ) {
 
 				/* translators: %s: site title */
 				$message  = sprintf( __( 'Se ha registrado un nuevo afiliado en %s:' ), $blogname ) . "\r\n\r\n";
-				
+
 				$recipient = get_option( 'admin_email' );
 			}
-			
+
 			/* translators: %s: user login */
 			$message .= sprintf( __( 'Username: %s' ), $user->user_login ) . "\r\n\r\n";
 			/* translators: %s: user email address */
@@ -174,34 +190,34 @@ if ( !function_exists( 'wp_new_user_notification' ) ) {
 
 
 /*
- 
+
         // user
         $user = new WP_User( $user_id );
         $userEmail = stripslashes( $user->user_email );
         $siteUrl = get_site_url();
         $logoUrl = plugin_dir_url( __FILE__ ).'/images/logo_cit.png';
- 
+
         $subject = 'Bienvenido al Club de Investigaci&oacute;n Tecnol&oacute;gica';
         $headers = 'From: Club de Investigaci&oacute;n Tecnol&oacute;gica <gekidasa@gmail.com>';
- 
+
         // admin email
         $message  = "Un nuevo afiliado ha sido registrado"."\r\n\r\n";
         $message .= 'Email: '.$userEmail."\r\n";
         @wp_mail( get_option( 'admin_email' ), 'Nuevo afiliado', $message, $headers );
- 
+
         ob_start();
         include plugin_dir_path( __FILE__ ).'/email_welcome.php';
         $message = ob_get_contents();
         ob_end_clean();
- 
+
         @wp_mail( $userEmail, $subject, $message, $headers );
- 
+
         // remove html content type
         remove_filter ( 'wp_mail_content_type', 'wpmail_content_type' );
 */
     }
 }
- 
+
 /**
  * wpmail_content_type
  * allow html emails
@@ -210,6 +226,6 @@ if ( !function_exists( 'wp_new_user_notification' ) ) {
  * @return string
  */
 function wpmail_content_type() {
- 
+
     return 'text/html';
 }
