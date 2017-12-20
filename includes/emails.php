@@ -31,12 +31,15 @@ if ( !function_exists( 'wp_new_user_notification' ) ) {
 		if ( 'user' !== $notify ) {
 			$switched_locale = switch_to_locale( get_locale() );
 
-			// if ( $membership_type == 'Afiliado Enterprise' ) {
+			// Admin email is Afiliado Enterprise
 			if ( in_array('afiliado_enterprise_pendiente', $user_roles) ) {
 
 				$subject = 'Solicitud de afiliación empresarial al Club de Investigación Tecnológica';
 
 				$message  = sprintf( __( 'Se ha registrado un nuevo afiliado en %s, y desea ser un Afiliado Empresarial.' ), $blogname ) . "\r\n\r\n";
+
+				/* translators: %s: user login */
+				$message .= sprintf( __( 'Usuario: %s' ), $user->user_login ) . "\r\n\r\n";
 
 				$message .= sprintf( __( 'Empresa: %s' ), $user->nickname ) . "\r\n\r\n";
 
@@ -44,17 +47,19 @@ if ( !function_exists( 'wp_new_user_notification' ) ) {
 
 				$message .= sprintf( __( 'Teléfono: %s' ), $user->mro_cit_user_phone ) . "\r\n\r\n";
 
-				$message .= sprintf( __( 'CONTACTO PRINCIPAL: %s' ), $user->nickname ) . "\r\n\r\n";
+				$message .= sprintf( __( 'CONTACTO PRINCIPAL' ) ) . "\r\n";
 
 				$message .= sprintf( __( 'Email: %s' ), $user->user_email ) . "\r\n";
 
-				$message .= sprintf( __( 'Nombre: %s' ), $user->user_first ) . ' ' . sprintf( __( 'Nombre de contacto: %s' ), $user->user_last ) . "\r\n";
+				//Fix
+				$message .= sprintf( __( 'Nombre: %1$s %2$s' ), $user->first_name, $user->last_name ) . "\r\n\r\n";
 
-				$message .= sprintf( __( 'CONTACTO SECUNDARIO: %s' ), $user->nickname ) . "\r\n\r\n";
+				$message .= sprintf( __( 'CONTACTO SECUNDARIO' ) ) . "\r\n";
 
 				$message .= sprintf( __( 'Email: %s' ), $user->mro_cit_user_secondary_email ) . "\r\n";
 
-				$message .= sprintf( __( 'Nombre: %s' ), $user->mro_cit_user_secondary_first ) . ' ' . sprintf( __( 'Nombre de contacto: %s' ), $user->mro_cit_user_secondary_last ) . "\r\n";
+				//Fix
+				$message .= sprintf( __( 'Nombre: %1$s %2$s' ), $user->mro_cit_user_secondary_first, $user->mro_cit_user_secondary_last ) . "\r\n";
 
 
 				$recipient = array(
@@ -62,20 +67,32 @@ if ( !function_exists( 'wp_new_user_notification' ) ) {
 					'matirosero@icloud.com',
 				);
 
+			// Admin email is Afiliado Personal
 			} else {
 				$subject = 'Nuevo afiliado personal al  Club de Investigación Tecnológica';
 
 				/* translators: %s: site title */
 				$message  = sprintf( __( 'Se ha registrado un nuevo afiliado en %s:' ), $blogname ) . "\r\n\r\n";
 
+				/* translators: %s: user login */
+				$message .= sprintf( __( 'Usuario: %s' ), $user->user_login ) . "\r\n\r\n";
+				/* translators: %s: user email address */
+				$message .= sprintf( __( 'Email: %s' ), $user->user_email ) . "\r\n";
+				$message .= sprintf( __( 'Nombre: %1$s %2$s' ), $user->first_name, $user->last_name ) . "\r\n\r\n";
+
+				$message .= sprintf( __( 'Teléfono: %s' ), $user->mro_cit_user_phone ) . "\r\n";
+
+				$message .= sprintf( __( 'País: %s' ), $user->mro_cit_user_country ) . "\r\n";
+
+				$message .= sprintf( __( 'Ocupación: %s' ), $user->mro_cit_user_occupation ) . "\r\n";
+
+				$message .= sprintf( __( 'Empresa: %s' ), $user->mro_cit_user_company ) . "\r\n";
+
 				$recipient = get_option( 'admin_email' );
 			}
 
-			/* translators: %s: user login */
-			$message .= sprintf( __( 'Username: %s' ), $user->user_login ) . "\r\n\r\n";
-			/* translators: %s: user email address */
-			$message .= sprintf( __( 'Email: %s' ), $user->user_email ) . "\r\n";
 
+			// Set up admin notification email
 			$wp_new_user_notification_email_admin = array(
 				'to'      => $recipient,
 				/* translators: Password change notification email subject. %s: Site title */
@@ -121,30 +138,48 @@ if ( !function_exists( 'wp_new_user_notification' ) ) {
 			return;
 		}
 
-		// Generate something random for a password reset key.
-		$key = wp_generate_password( 20, false );
+		
+		/** Generate something random for a password reset key. */
+		// $key = wp_generate_password( 20, false );
 
 		/** This action is documented in wp-login.php */
-		do_action( 'retrieve_password_key', $user->user_login, $key );
+		// do_action( 'retrieve_password_key', $user->user_login, $key );
 
-		// Now insert the key, hashed, into the DB.
-		if ( empty( $wp_hasher ) ) {
-			require_once ABSPATH . WPINC . '/class-phpass.php';
-			$wp_hasher = new PasswordHash( 8, true );
-		}
-		$hashed = time() . ':' . $wp_hasher->HashPassword( $key );
-		$wpdb->update( $wpdb->users, array( 'user_activation_key' => $hashed ), array( 'user_login' => $user->user_login ) );
+		/** Now insert the key, hashed, into the DB. */
+		// if ( empty( $wp_hasher ) ) {
+		// 	require_once ABSPATH . WPINC . '/class-phpass.php';
+		// 	$wp_hasher = new PasswordHash( 8, true );
+		// }
+		// $hashed = time() . ':' . $wp_hasher->HashPassword( $key );
+		// $wpdb->update( $wpdb->users, array( 'user_activation_key' => $hashed ), array( 'user_login' => $user->user_login ) );
 
 		$switched_locale = switch_to_locale( get_user_locale( $user ) );
 
-		/* translators: %s: user login */
-		$message = 'Bienvenido al Club de Investigación Tecnológica, ' . $user->first_name . "\r\n\r\n";
-		$message .= 'Nos da mucho gusto que se ha unido a nosotros.' . "\r\n\r\n";
-		$message .= 'A continuación, encontrará información importante sobre su cuenta.' . "\r\n\r\n";
 
-		$message .= sprintf(__('Usuario: %s'), $user->user_login) . "\r\n\r\n";
-		$message .= __('Para establecer su contraseña, visite la siguiente dirección:') . "\r\n\r\n";
-		$message .= '<' . network_site_url("wp-login.php?action=rp&key=$key&login=" . rawurlencode($user->user_login), 'login') . ">\r\n\r\n";
+		if ( in_array('afiliado_enterprise_pendiente', $user_roles) ) {
+			$message = sprintf(__('¡Nos da gran placer dar la bienvenida a %s al Club de Investigación Tecnológica!'), $user->nickname) . "\r\n\r\n";
+
+			$message .= sprintf(__('Pronto nos pondremos en contacto para finalizar el proceso de afiliación. Mientras tanto, está cuenta está en estado "Pendiente": puede ingresar al sitio y descargar informes de investigación. En cuanto finalice la afiliación, también será posible tramitar sus reservas a nuestros eventos. ')) . "\r\n\r\n";
+
+			$message .= sprintf(__('Puede usar estas credenciales para ingresar al sitio:')) . "\r\n";
+			$message .= sprintf(__('Usuario: %s'), $user->user_login) . "\r\n";
+			$message .= sprintf(__('Email: %s'), $user->user_email) . "\r\n\r\n";
+
+		} else {
+			/* translators: %s: user login */
+			$message = '¡Bienvenido al Club de Investigación Tecnológica, ' . $user->first_name . '!' . "\r\n\r\n";
+			$message .= 'Nos da mucho gusto que se haya unido a nosotros.' . "\r\n\r\n";
+			$message .= 'A continuación, encontrará información importante sobre su cuenta.' . "\r\n\r\n";
+
+			$message .= sprintf(__('Usuario: %s'), $user->user_login) . "\r\n";
+			$message .= sprintf(__('Email: %s'), $user->user_email) . "\r\n\r\n";
+
+			$message .= 'Puede usar estas credenciales para ingresar al sitio y descargar los informes de investigación o adquirir entradas a los eventos del Club.' . "\r\n\r\n";
+		}
+
+
+		// $message .= __('Para establecer su contraseña, visite la siguiente dirección:') . "\r\n\r\n";
+		// $message .= '<' . network_site_url("wp-login.php?action=rp&key=$key&login=" . rawurlencode($user->user_login), 'login') . ">\r\n\r\n";
 
 
 		$message .= 'Saludos cordiales,' . "\r\n\r\n";
@@ -176,6 +211,7 @@ if ( !function_exists( 'wp_new_user_notification' ) ) {
 		 * @param string  $blogname The site title.
 		 */
 		$wp_new_user_notification_email = apply_filters( 'wp_new_user_notification_email', $wp_new_user_notification_email, $user, $blogname );
+
 
 		wp_mail(
 			$wp_new_user_notification_email['to'],
@@ -216,6 +252,15 @@ if ( !function_exists( 'wp_new_user_notification' ) ) {
         remove_filter ( 'wp_mail_content_type', 'wpmail_content_type' );
 */
     }
+}
+
+add_action('wp_mail_failed', 'log_mailer_errors', 10, 1);
+function log_mailer_errors(){
+  $fn = ABSPATH . '/mail.log'; // say you've got a mail.log file in your server root
+  $fp = fopen($fn, 'a');
+  write_log("Mailer Error: " . $mailer->ErrorInfo );
+  fputs($fp, "Mailer Error: " . $mailer->ErrorInfo ."\n");
+  fclose($fp);
 }
 
 /**
