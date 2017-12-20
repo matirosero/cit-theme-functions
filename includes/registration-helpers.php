@@ -33,19 +33,20 @@ function mro_cit_validate_country( $value ) {
 
 function sanitize_membership( $value ) {
 
-   $value = sanitize_text_field( $value );
+  $value = sanitize_text_field( $value );
 
-   $valid_values = array(
-       'Afiliado Personal',
-       'Afiliado Enterprise',
-   );
+  $valid_values = array(
+    'afiliado_personal',
+    'afiliado_enterprise',
+    'afiliado_enterprise_pendiente',
+  );
 
-   if( ! in_array( $value, $valid_values ) ) {
+  if( ! in_array( $value, $valid_values ) ) {
 
-        wp_die( 'Invalid value, go back and try again.' );
-    }
+    wp_die( 'Invalid value, go back and try again.' );
+  }
 
-    return $value;
+  return $value;
 }
 add_filter( 'sanitize_user_meta_mro_cit_user_membership', 'sanitize_membership' );
 
