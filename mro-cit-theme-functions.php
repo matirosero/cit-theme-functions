@@ -95,17 +95,6 @@ require_once( dirname( __FILE__ ) . '/includes/eventscalendar-custom-fields.php'
 
 
 /**
- * Registration.
- *
- * @since 0.1.0
- */
-// require_once( dirname( __FILE__ ) . '/includes/registration.php' );
-// require_once( dirname( __FILE__ ) . '/includes/registration-helpers.php' );
-// require_once( dirname( __FILE__ ) . '/includes/emails.php' );
-
-// require_once( dirname( __FILE__ ) . '/includes/registration-user-shortcodes.php' );
-
-/**
  * Caldera.
  *
  * @since 0.1.0
