@@ -11,6 +11,7 @@
  */
 function custom_post_type_cat_filter($query) {
   if ( !is_admin() && $query->is_main_query() ) {
+    //Include categories Programa Estándares Tics (9), Costa Rica Digital (16) y Ensayos Técnicos (7)
     if ($query->is_category( array( 9, 16, 7 ) ) ) {
       $query->set( 'post_type', array( 'post', 'cit_archive' ) );
     }
@@ -23,8 +24,23 @@ add_action('pre_get_posts','custom_post_type_cat_filter');
  * Exclude categories from frontpage
  */
 function mro_cit_exclude_category( $query ) {
+    // If it's home, or if it's cat archive Publicaciones (13) o Noticias (15)
     if ( ( $query->is_home() && $query->is_main_query() ) || ( $query->is_category( array( 15, 13 ) ) && $query->is_main_query() ) ) {
+        // exclude categories Uncategorized(1) or No date (115)
         $query->set( 'cat', '-1, -115' );
+
+        //Exclude tax
+        $query->set( 'tax_query', array(
+        	array(
+	            'taxonomy' => 'mro_cit_problem',
+	            'field' => 'id',
+	            'terms' => array (
+	            	'115',
+	            	'114',
+	            ),
+	            'operator' => 'NOT IN'
+        	)
+        ) );
     }
 }
 add_action( 'pre_get_posts', 'mro_cit_exclude_category' );
