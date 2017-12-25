@@ -13,17 +13,17 @@ add_action( 'init', 'mro_cit_register_tax' );
 /* Register taxonomies */
 function mro_cit_register_tax() {
 
-	$trouble_post_types = array( 
-		'post', 
+	$trouble_post_types = array(
+		'post',
 		'cit_archive',
 		'cit_unknown',
 		'tribe_events',
 		'cit_past_event',
-		'cit_report' 
+		'cit_report'
 	);
-	$all_post_types = array( 
-		'page', 
-		'post', 
+	$all_post_types = array(
+		'page',
+		'post',
 		'cit_affiliate',
 		'cit_alliances',
 		'cit_archive',
@@ -32,12 +32,13 @@ function mro_cit_register_tax() {
 		'cit_past_event',
 		'cit_profile',
 		'cit_testimonials',
-		'cit_report' 
+		'cit_report',
+		'tribe_events'
 	);
 
-	$no_events = array( 
-		'page', 
-		'post', 
+	$no_events = array(
+		'page',
+		'post',
 		'cit_affiliate',
 		'cit_alliances',
 		'cit_archive',
@@ -46,10 +47,15 @@ function mro_cit_register_tax() {
 		// 'cit_past_event',
 		'cit_profile',
 		'cit_testimonials',
-		'cit_report' 
+		'cit_report'
 	);
 
-	// Add new taxonomy, NOT hierarchical (like tags)
+
+
+	/*
+	 * TAXONOMY: Problems
+	 * CPT: Post, Archive, Unknown, Tribe Events, Past Events, Reports
+	 */
 	$labels = array(
 		'name'                       => _x( 'Problems', 'taxonomy general name', 'mro-cit-functions' ),
 		'singular_name'              => _x( 'Problem', 'taxonomy singular name', 'mro-cit-functions' ),
@@ -83,24 +89,27 @@ function mro_cit_register_tax() {
 
 
 
-	// Add new taxonomy, NOT hierarchical (like tags)
+	/*
+	 * TAXONOMY: Sources
+	 * CPT: All
+	 */
 	$labels = array(
-		'name'                       => _x( 'DB Sources', 'taxonomy general name', 'mro-cit-functions' ),
-		'singular_name'              => _x( 'DB Source', 'taxonomy singular name', 'mro-cit-functions' ),
-		'search_items'               => __( 'Search DB Sources', 'mro-cit-functions' ),
-		'popular_items'              => __( 'Popular DB Sources', 'mro-cit-functions' ),
-		'all_items'                  => __( 'All DB Sources', 'mro-cit-functions' ),
+		'name'                       => _x( 'Sources', 'taxonomy general name', 'mro-cit-functions' ),
+		'singular_name'              => _x( 'Source', 'taxonomy singular name', 'mro-cit-functions' ),
+		'search_items'               => __( 'Search Sources', 'mro-cit-functions' ),
+		'popular_items'              => __( 'Popular Sources', 'mro-cit-functions' ),
+		'all_items'                  => __( 'All Sources', 'mro-cit-functions' ),
 		'parent_item'                => null,
 		'parent_item_colon'          => null,
-		'edit_item'                  => __( 'Edit DB Source', 'mro-cit-functions' ),
-		'update_item'                => __( 'Update DB Source', 'mro-cit-functions' ),
-		'add_new_item'               => __( 'Add New DB Source', 'mro-cit-functions' ),
-		'new_item_name'              => __( 'New DB Source Name', 'mro-cit-functions' ),
-		'separate_items_with_commas' => __( 'Separate DB sources with commas', 'mro-cit-functions' ),
-		'add_or_remove_items'        => __( 'Add or remove DB sources', 'mro-cit-functions' ),
-		'choose_from_most_used'      => __( 'Choose from the most used DB sources', 'mro-cit-functions' ),
-		'not_found'                  => __( 'No DB sources found.', 'mro-cit-functions' ),
-		'menu_name'                  => __( 'DB Sources', 'mro-cit-functions' ),
+		'edit_item'                  => __( 'Edit Source', 'mro-cit-functions' ),
+		'update_item'                => __( 'Update Source', 'mro-cit-functions' ),
+		'add_new_item'               => __( 'Add New Source', 'mro-cit-functions' ),
+		'new_item_name'              => __( 'New Source Name', 'mro-cit-functions' ),
+		'separate_items_with_commas' => __( 'Separate sources with commas', 'mro-cit-functions' ),
+		'add_or_remove_items'        => __( 'Add or remove sources', 'mro-cit-functions' ),
+		'choose_from_most_used'      => __( 'Choose from the most used sources', 'mro-cit-functions' ),
+		'not_found'                  => __( 'No sources found.', 'mro-cit-functions' ),
+		'menu_name'                  => __( 'Sources', 'mro-cit-functions' ),
 	);
 
 	$args = array(
@@ -110,13 +119,17 @@ function mro_cit_register_tax() {
 		// 'show_admin_column'     => true,
 		'update_count_callback' => '_update_post_term_count',
 		'query_var'             => true,
-		'rewrite'               => array( 'slug' => 'db-source' ),
+		'rewrite'               => array( 'slug' => 'source' ),
 	);
 
-	register_taxonomy( 'mro_cit_db_src', $no_events, $args );
+	register_taxonomy( 'mro_cit_db_src', $all_post_types, $args );
 
 
-	// Add new taxonomy, NOT hierarchical (like tags)
+
+	/*
+	 * TAXONOMY: Years
+	 * CPT: Past events, Tribe events
+	 */
 	$labels = array(
 		'name'                       => _x( 'Years', 'taxonomy general name', 'mro-cit-functions' ),
 		'singular_name'              => _x( 'Year', 'taxonomy singular name', 'mro-cit-functions' ),
@@ -146,10 +159,13 @@ function mro_cit_register_tax() {
 		'rewrite'               => array( 'slug' => 'yearly-events' ),
 	);
 
-	register_taxonomy( 'mro_cit_event_year', 'cit_past_event', $args );
+	register_taxonomy( 'mro_cit_event_year', array('cit_past_event', 'tribe_events'), $args );
 
 
-	// Add new taxonomy, NOT hierarchical (like tags)
+	/*
+	 * TAXONOMY: Weird dates
+	 * CPT: All except events
+	 */
 	$labels = array(
 		'name'                       => _x( 'Weird Dates', 'taxonomy general name', 'mro-cit-functions' ),
 		'singular_name'              => _x( 'Weird Date', 'taxonomy singular name', 'mro-cit-functions' ),

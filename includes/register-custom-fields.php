@@ -1,5 +1,7 @@
 <?php
-
+/*
+ * Build link to old URL
+ */
 function link_to_old_url( $field_args, $field ) {
 	$post_id = $field->object_id;
 	$base = 'http://www.clubdeinvestigacion.com';
@@ -9,6 +11,10 @@ function link_to_old_url( $field_args, $field ) {
 	}
 }
 
+
+/*
+ * Board members custom fields
+ */
 add_action( 'cmb2_admin_init', 'mro_cit_register_board_member_metabox' );
 function mro_cit_register_board_member_metabox() {
 	$prefix = 'mro_cit_board_member_';
@@ -16,8 +22,8 @@ function mro_cit_register_board_member_metabox() {
 	$cmb_demo = new_cmb2_box( array(
 		'id'            => $prefix . 'metabox',
 		'title'         => esc_html__( 'Additional information', 'mro-cit-functions' ),
-		'object_types'  => array( 
-			'cit_board_members' 
+		'object_types'  => array(
+			'cit_board_members'
 		), // Post type
 		'context'    => 'normal',
 		'priority'   => 'high',
@@ -39,6 +45,10 @@ function mro_cit_register_board_member_metabox() {
 	) );
 }
 
+
+/*
+ * Download reports custom fields
+ */
 add_action( 'cmb2_admin_init', 'mro_cit_register_report_metabox' );
 function mro_cit_register_report_metabox() {
 	$prefix = 'mro_cit_report_';
@@ -46,8 +56,8 @@ function mro_cit_register_report_metabox() {
 	$cmb_demo = new_cmb2_box( array(
 		'id'            => $prefix . 'downloads_metabox',
 		'title'         => esc_html__( 'Report download information', 'mro-cit-functions' ),
-		'object_types'  => array( 
-			'cit_report' 
+		'object_types'  => array(
+			'cit_report'
 		), // Post type
 		'context'    => 'normal',
 		'priority'   => 'high',
@@ -88,7 +98,9 @@ function mro_cit_register_report_metabox() {
 	) );
 }
 
-
+/*
+ * Events custom fields
+ */
 add_action( 'cmb2_admin_init', 'mro_cit_register_events_metabox' );
 function mro_cit_register_events_metabox() {
 	$prefix = 'mro_cit_event_';
@@ -96,8 +108,8 @@ function mro_cit_register_events_metabox() {
 	$cmb_demo = new_cmb2_box( array(
 		'id'            => $prefix . 'sections_metabox',
 		'title'         => esc_html__( 'Additional information', 'mro-cit-functions' ),
-		'object_types'  => array( 
-			'cit_past_event' 
+		'object_types'  => array(
+			'cit_past_event'
 		), // Post type
 		'context'    => 'normal',
 		'priority'   => 'high',
@@ -115,7 +127,7 @@ function mro_cit_register_events_metabox() {
         ),
     ) );
 
-        //* Title
+    //* Title
     $cmb_demo->add_group_field( $group_download, array(
         'name'    => __( 'File name', 'mro-cit-functions' ),
         'id'      => $prefix . 'presentation_name',
@@ -152,7 +164,7 @@ function mro_cit_register_events_metabox() {
 		'id'   => $prefix . 'video',
 		'type' => 'oembed',
 		'repeatable'      => true,
-	) );	
+	) );
 
 	$cmb_demo->add_field( array(
 		'name' => esc_html__( 'Gallery text', 'mro-cit-functions' ),
@@ -185,10 +197,10 @@ function mro_cit_register_events_metabox() {
 }
 
 
-add_action( 'cmb2_admin_init', 'mro_cit_register_migration_sidebar_metabox' );
-/**
- * Hook in and add a demo metabox. Can only happen on the 'cmb2_admin_init' or 'cmb2_init' hook.
+/*
+ * Old URL link in sidebar
  */
+add_action( 'cmb2_admin_init', 'mro_cit_register_migration_sidebar_metabox' );
 function mro_cit_register_migration_sidebar_metabox() {
 	$prefix = 'mro_cit_migration_sidebar_';
 
@@ -198,9 +210,9 @@ function mro_cit_register_migration_sidebar_metabox() {
 	$cmb_demo = new_cmb2_box( array(
 		'id'            => $prefix . 'metabox',
 		'title'         => esc_html__( 'Migration Information', 'mro-cit-functions' ),
-		'object_types'  => array( 
-			'page', 
-			'post', 
+		'object_types'  => array(
+			'page',
+			'post',
 			'cit_affiliate',
 			'cit_alliances',
 			'cit_archive',
@@ -209,7 +221,7 @@ function mro_cit_register_migration_sidebar_metabox() {
 			'cit_past_event',
 			'cit_profile',
 			'cit_testimonials',
-			'cit_report' 
+			'cit_report'
 		), // Post type
 		'context'    => 'side',
 		'priority'   => 'high',
@@ -231,10 +243,10 @@ function mro_cit_register_migration_sidebar_metabox() {
 }
 
 
-add_action( 'cmb2_admin_init', 'mro_cit_register_migration_metabox' );
-/**
- * Hook in and add a demo metabox. Can only happen on the 'cmb2_admin_init' or 'cmb2_init' hook.
+/*
+ * Custo fields with migration information
  */
+add_action( 'cmb2_admin_init', 'mro_cit_register_migration_metabox' );
 function mro_cit_register_migration_metabox() {
 	$prefix = 'mro_cit_migration_';
 
@@ -244,9 +256,9 @@ function mro_cit_register_migration_metabox() {
 	$cmb_demo = new_cmb2_box( array(
 		'id'            => $prefix . 'metabox',
 		'title'         => esc_html__( 'Migration Information', 'mro-cit-functions' ),
-		'object_types'  => array( 
-			'page', 
-			'post', 
+		'object_types'  => array(
+			'page',
+			'post',
 			'cit_affiliate',
 			'cit_alliances',
 			'cit_archive',
@@ -255,7 +267,7 @@ function mro_cit_register_migration_metabox() {
 			'cit_past_event',
 			'cit_profile',
 			'cit_testimonials',
-			'cit_report' 
+			'cit_report'
 		), // Post type
 		// 'show_on_cb' => 'mro_cit_migration_show_if_front_page', // function should return a bool value
 		// 'context'    => 'normal',
