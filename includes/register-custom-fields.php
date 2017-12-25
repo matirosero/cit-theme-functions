@@ -109,7 +109,8 @@ function mro_cit_register_events_metabox() {
 		'id'            => $prefix . 'sections_metabox',
 		'title'         => esc_html__( 'Additional information', 'mro-cit-functions' ),
 		'object_types'  => array(
-			'cit_past_event'
+			'cit_past_event',
+			'tribe_events'
 		), // Post type
 		'context'    => 'normal',
 		'priority'   => 'high',
