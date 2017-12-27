@@ -301,7 +301,7 @@ function mro_cit_register_cpt() {
 			// 'capability_type' => 'post',
 			'hierarchical' => false, //false = post
 			/* the next one is important, it tells what's enabled in the post editor */
-			'supports' => array( 'title', 'editor', 'excerpt', ),
+			'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
 			'show_in_menu'        => TRUE,
         	'show_in_nav_menus'   => false,  //change to false?
 	 	) /* end of options */
