@@ -116,3 +116,11 @@ require_once( dirname( __FILE__ ) . '/includes/shortcodes.php' );
  * @since 0.1.0
  */
 require_once( dirname( __FILE__ ) . '/includes/widget-latest-cpt.php' );
+
+
+/**
+ * Redirect.
+ *
+ * @since 0.1.0
+ */
+require_once( dirname( __FILE__ ) . '/includes/redirect.php' );
