@@ -222,7 +222,8 @@ function mro_cit_register_migration_sidebar_metabox() {
 			'cit_past_event',
 			'cit_profile',
 			'cit_testimonials',
-			'cit_report'
+			'cit_report',
+			'tribe_events'
 		), // Post type
 		'context'    => 'side',
 		'priority'   => 'high',
