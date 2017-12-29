@@ -5,8 +5,6 @@ add_filter( '404_template', 'mro_cit_redirect_old_urls' );
 function mro_cit_redirect_old_urls( $template ) {
     global $wp_rewrite, $wp_query;
 
-    // var_dump($wp_query);
-
     if ( is_404() ) {
 
         $slug = get_query_var( 'name' );
