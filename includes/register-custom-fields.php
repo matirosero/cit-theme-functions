@@ -64,18 +64,18 @@ function mro_cit_register_report_metabox() {
 	) );
 
 
-	$cmb_demo->add_field( array(
-		'name'       => esc_html__( 'File path', 'mro-cit-functions' ),
-		// 'desc'       => esc_html__( 'field description (optional)', 'mro-cit-functions' ),
-		'id'         => $prefix . 'download_path',
-		'type'       => 'text',
-		'column'          => true,
-	) );
+	// $cmb_demo->add_field( array(
+	// 	'name'       => esc_html__( 'File path', 'mro-cit-functions' ),
+	// 	// 'desc'       => esc_html__( 'field description (optional)', 'mro-cit-functions' ),
+	// 	'id'         => $prefix . 'download_path',
+	// 	'type'       => 'text',
+	// 	'column'          => true,
+	// ) );
 
 
 	$cmb_demo->add_field( array(
 		'name' => esc_html__( 'Download ID', 'mro-cit-functions' ),
-		'desc' => esc_html__( 'field description (optional)', 'mro-cit-functions' ),
+		'desc' => esc_html__( 'ID de desccarga (bajo Downloads)', 'mro-cit-functions' ),
 		'id'   => $prefix . 'download_id',
 		'type' => 'text_small',
 		'column'          => true,
@@ -85,16 +85,6 @@ function mro_cit_register_report_metabox() {
 		// 	'position' => 2, // Set as the second column.
 		// );
 		// 'display_cb' => 'mro_cit_demo_display_text_small_column', // Output the display of the column values through a callback.
-	) );
-
-	$cmb_demo->add_field( array(
-		'name' => esc_html__( 'Download shortcode', 'mro-cit-functions' ),
-		'desc' => esc_html__( 'Utilizar el botón "Add Download" para escoger el archivo. No poner nada más.', 'mro-cit-functions' ),
-		'id'   => $prefix . 'download_shortcode',
-		'type'    => 'wysiwyg',
-		'options' => array(
-			'textarea_rows' => 2,
-		),
 	) );
 }
 
@@ -128,16 +118,11 @@ function mro_cit_register_events_metabox() {
         ),
     ) );
 
-    //* Title
-    $cmb_demo->add_group_field( $group_download, array(
-        'name'    => __( 'File name', 'mro-cit-functions' ),
-        'id'      => $prefix . 'presentation_name',
-        'type'    => 'text',
-    ) );
+
 
 	$cmb_demo->add_group_field( $group_download, array(
 		'name' => esc_html__( 'Upload file', 'mro-cit-functions' ),
-		'desc' => esc_html__( 'Upload an image or enter a URL.', 'mro-cit-functions' ),
+		'desc' => esc_html__( 'Upload a PDF or enter a URL for one.', 'mro-cit-functions' ),
 		'id'   => $prefix . 'presentation_file',
 		'type' => 'file',
 		'query_args' => array(
@@ -145,9 +130,24 @@ function mro_cit_register_events_metabox() {
 		),
 	) );
 
+
+	// $cmb_demo->add_field( array(
+	// 	'name' => esc_html__( 'Upload file', 'mro-cit-functions' ),
+	// 	'desc' => esc_html__( 'Upload a PDF or enter a URL for one.', 'mro-cit-functions' ),
+	// 	'id'   => $prefix . 'presentation_file',
+	// 	'type' => 'file',
+	// 	'repeatable' => true,
+	// 	'query_args' => array(
+	// 		'type' => 'application/pdf', // Make library only display PDFs.
+	// 	),
+	// ) );
+
+
+
+
 	$cmb_demo->add_field( array(
 		'name' => esc_html__( 'Video text', 'mro-cit-functions' ),
-		// 'desc' => esc_html__( 'field description (optional)', 'mro-cit-functions' ),
+		'desc' => esc_html__( 'Texto o videos con embeds raros como los de Jimmy.', 'mro-cit-functions' ),
 		'id'   => $prefix . 'video_text',
 		'type'    => 'wysiwyg',
 		'options' => array(
@@ -169,7 +169,7 @@ function mro_cit_register_events_metabox() {
 
 	$cmb_demo->add_field( array(
 		'name' => esc_html__( 'Gallery text', 'mro-cit-functions' ),
-		// 'desc' => esc_html__( 'field description (optional)', 'mro-cit-functions' ),
+		'desc' => esc_html__( 'Texto o embeds de Facebook', 'mro-cit-functions' ),
 		'id'   => $prefix . 'gallery_text',
 		'type'    => 'wysiwyg',
 		'sanitization_cb' => false,
