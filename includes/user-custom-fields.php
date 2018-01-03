@@ -25,26 +25,12 @@ function mro_cit_register_user_profile_metabox() {
 		'on_front' => false,
 	) );
 
-	// $cmb_user->add_field( array(
-	// 	'name'             => esc_html__( 'Membership type', 'mro-cit-functions' ),
-	// 	'id'               => $prefix . 'membership',
-	// 	'type'             => 'select',
-	// 	'show_option_none' => true,
-	// 	'options'          => array(
-	// 		'Afiliado Personal' => 'Afiliado Personal',
-	// 		'Afiliado Enterprise' => 'Afiliado Enterprise',
-	// 	),
-	// 	'after_field'  => '<p>La cuota anual para Afiliados Enterprise es $650. Le daremos seguimiento a su inscripción por correo.</p>',
-	// ) );
-
 	$cmb_user->add_field( array(
 		'name' => __( 'Phone number', 'mro-cit-functions' ),
 		// 'desc' => __( 'field description (optional)', 'mro-cit-functions' ),
 		'id'   => $prefix . 'phone',
 		'type' => 'text',
 	) );
-
-
 
 	$cmb_user->add_field( array(
 		'name'             => esc_html__( 'Country', 'mro-cit-functions' ),
@@ -123,6 +109,13 @@ function mro_cit_register_user_enterprise_metabox() {
 		'id'       => $prefix . 'afiliado_enterprise_title',
 		'type'     => 'title',
 		'on_front' => false,
+	) );
+
+	$cmb_user->add_field( array(
+		'name' => __( 'Business sector', 'mro-cit-functions' ),
+		// 'desc' => __( 'Secondary contact\s first name', 'mro-cit-functions' ),
+		'id'   => $prefix . 'sector',
+		'type' => 'text',
 	) );
 
 	$cmb_user->add_field( array(
