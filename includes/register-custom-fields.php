@@ -13,6 +13,71 @@ function link_to_old_url( $field_args, $field ) {
 
 
 /*
+ * Page custom fields
+ */
+add_action( 'cmb2_admin_init', 'mro_cit_register_page_metabox' );
+function mro_cit_register_page_metabox() {
+	$prefix = 'mro_cit_page_';
+	$cmb_demo = new_cmb2_box( array(
+		'id'            => $prefix . 'metabox',
+		'title'         => esc_html__( 'Content', 'mro-cit-functions' ),
+		'object_types'  => array(
+			'page'
+		), // Post type
+		'context'    => 'normal',
+		'priority'   => 'high',
+	) );
+
+
+	$cmb_demo->add_field( array(
+		'name'             => esc_html__( 'Layout', 'demo-functions' ),
+		// 'desc'             => esc_html__( 'field description (optional)', 'demo-functions' ),
+		'id'               => $prefix . 'layout',
+		'type'             => 'radio_inline',
+		'show_option_none' => 'Traditional (one block of text)',
+		'options'          => array(
+			'hero' => esc_html__( 'Hero image with text overlaid', 'demo-functions' ),
+			'hero-img-left'     => esc_html__( 'Hero image to the right', 'demo-functions' ),
+			'hero-img-right'   => esc_html__( 'Hero image to the right', 'demo-functions' ),
+		),
+	) );
+
+
+	$cmb_demo->add_field( array(
+		'id'      => '_thumbnail', // Saves to WP post thumbnail, allows the_post_thumbnail()
+		'name'    => 'Image',
+		'desc'    => 'Upload/Select an image.',
+		'type'    => 'file',
+		'options' => array(
+			'url' => false,
+		),
+		'text' => array(
+			'add_upload_file_text' => 'Add Image'
+		),
+	) );
+
+	$cmb_demo->add_field( array(
+		'name'    => esc_html__( 'Focus text', 'demo-functions' ),
+		'desc'    => esc_html__( 'field description (optional)', 'demo-functions' ),
+		'id'      => 'post_content',
+		'type'    => 'wysiwyg',
+		'options' => array(
+			'textarea_rows' => 10,
+		),
+	) );
+
+	$cmb_demo->add_field( array(
+		'name'    => esc_html__( 'Main text', 'demo-functions' ),
+		'desc'    => esc_html__( 'field description (optional)', 'demo-functions' ),
+		'id'      => $prefix . 'secondary_content',
+		'type'    => 'wysiwyg',
+		'options' => array(
+			'textarea_rows' => 20,
+		),
+	) );
+}
+
+/*
  * Board members custom fields
  */
 add_action( 'cmb2_admin_init', 'mro_cit_register_board_member_metabox' );

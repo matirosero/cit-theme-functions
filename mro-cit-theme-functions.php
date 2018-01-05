@@ -34,6 +34,14 @@ add_action( 'plugins_loaded', 'mro_cit_load_textdomain' );
 
 
 /**
+ * Override title, content.
+ *
+ * @since 0.1.0
+ */
+require_once( dirname( __FILE__ ) . '/includes/override.php' );
+
+
+/**
  * Helpers.
  *
  * @since 0.1.0
