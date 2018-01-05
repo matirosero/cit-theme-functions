@@ -55,10 +55,23 @@ function mro_cit_register_page_metabox() {
 			'add_upload_file_text' => 'Add Image'
 		),
 	) );
+	
+	$cmb_demo->add_field( array(
+		'name'    => esc_html__( 'Background color', 'demo-functions' ),
+		'desc'    => esc_html__( 'field description (optional)', 'demo-functions' ),
+		'id'      => $prefix . 'bgcolor',
+		'type'    => 'colorpicker',
+		'default' => '#ffffff',
+		// 'attributes' => array(
+		// 	'data-colorpicker' => json_encode( array(
+		// 		'palettes' => array( '#3dd0cc', '#ff834c', '#4fa2c0', '#0bc991', ),
+		// 	) ),
+		// ),
+	) );
 
 	$cmb_demo->add_field( array(
-		'name'    => esc_html__( 'Focus text', 'demo-functions' ),
-		'desc'    => esc_html__( 'field description (optional)', 'demo-functions' ),
+		'name'    => esc_html__( 'Primary text', 'demo-functions' ),
+		'desc'    => esc_html__( 'If there is a hero image, this is the text that goes with it. In the traditional layout, this is the only text.', 'demo-functions' ),
 		'id'      => 'post_content',
 		'type'    => 'wysiwyg',
 		'options' => array(
@@ -67,7 +80,7 @@ function mro_cit_register_page_metabox() {
 	) );
 
 	$cmb_demo->add_field( array(
-		'name'    => esc_html__( 'Main text', 'demo-functions' ),
+		'name'    => esc_html__( 'Secondary text', 'demo-functions' ),
 		'desc'    => esc_html__( 'field description (optional)', 'demo-functions' ),
 		'id'      => $prefix . 'secondary_content',
 		'type'    => 'wysiwyg',
@@ -75,6 +88,8 @@ function mro_cit_register_page_metabox() {
 			'textarea_rows' => 20,
 		),
 	) );
+
+
 }
 
 /*
