@@ -19,19 +19,11 @@ add_filter( 'cmb2_override_post_title_meta_save', '__return_true' );
 add_filter( 'cmb2_override_post_content_meta_save', '__return_true' );
 
 
-
-function reset_editor()
-{
-     global $_wp_post_type_features;
-
-     $post_type="page";
-     $feature = "editor";
-     if ( !isset($_wp_post_type_features[$post_type]) )
-     {
-
-     }
-     elseif ( isset($_wp_post_type_features[$post_type][$feature]) )
-     unset($_wp_post_type_features[$post_type][$feature]);
+/*
+ * Remove editor and featured image from pages so the above works.
+ */
+add_action( 'init', 'mro_cit_remove_support' );
+function mro_cit_remove_support() {
+     remove_post_type_support( 'page', 'editor' );
+     remove_post_type_support( 'page', 'thumbnail' );
 }
-
-add_action("init","reset_editor");
