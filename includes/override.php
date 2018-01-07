@@ -1,4 +1,5 @@
 <?php
+// https://github.com/CMB2/CMB2-Snippet-Library/blob/master/misc/replace-wp-title-content-thumbnail-with-cmb2-fields.php
 
 /*
  * Override the title/content field retrieval so CMB2 doesn't look in post-meta.

@@ -36,8 +36,8 @@ function mro_cit_register_page_metabox() {
 		'type'             => 'radio_inline',
 		'show_option_none' => 'Traditional (one block of text)',
 		'options'          => array(
-			'hero' => esc_html__( 'Hero image with text overlaid', 'demo-functions' ),
-			'hero-img-left'     => esc_html__( 'Hero image to the right', 'demo-functions' ),
+			// 'hero' => esc_html__( 'Hero image with text overlaid', 'demo-functions' ),
+			'hero-img-left'     => esc_html__( 'Hero image to the left', 'demo-functions' ),
 			'hero-img-right'   => esc_html__( 'Hero image to the right', 'demo-functions' ),
 		),
 	) );
