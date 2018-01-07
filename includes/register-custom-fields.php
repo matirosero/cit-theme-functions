@@ -110,6 +110,13 @@ function mro_cit_register_page_metabox() {
 	) );
 
 	$cmb_demo->add_group_field( $secondary_blocks, array(
+		'name' => __( 'Block ID', 'mro-cit-functions' ),
+		'desc' => __( 'Lowercase and dashes (-) only', 'mro-cit-functions' ),
+		'id'   => 'block_id',
+		'type' => 'text',
+	) );
+
+	$cmb_demo->add_group_field( $secondary_blocks, array(
 		'name' => __( 'Block Content', 'mro-cit-functions' ),
 		'desc' => __( 'Enter the content.', 'mro-cit-functions' ),
 		'id'   => 'content',
