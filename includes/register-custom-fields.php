@@ -89,7 +89,35 @@ function mro_cit_register_page_metabox() {
 		),
 	) );
 
+    // Repeatable group
+    $secondary_blocks = $cmb_demo->add_field( array(
+        'id'          => $prefix . 'secondary_blocks',
+        'type'        => 'group',
+        'repeatable'  => true,
+        'options'     => array(
+            'group_title'   => __( 'Additional content blocks', 'mro-cit-functions' ) . ' {#}', // {#} gets replaced by row number
+            'add_button'    => __( 'Add another content block', 'mro-cit-functions' ),
+            'remove_button' => __( 'Remove content block', 'mro-cit-functions' ),
+            'sortable'      => true, // beta
+        ),
+    ) );
 
+	$cmb_demo->add_group_field( $secondary_blocks, array(
+		'name' => __( 'Block Title', 'mro-cit-functions' ),
+		'desc' => __( 'Enter the title for the content block.', 'mro-cit-functions' ),
+		'id'   => 'title',
+		'type' => 'text',
+	) );
+
+	$cmb_demo->add_group_field( $secondary_blocks, array(
+		'name' => __( 'Block Content', 'mro-cit-functions' ),
+		'desc' => __( 'Enter the content.', 'mro-cit-functions' ),
+		'id'   => 'content',
+		'type'    => 'wysiwyg',
+		'options' => array(
+			'textarea_rows' => 20,
+		),
+	) );
 }
 
 /*
