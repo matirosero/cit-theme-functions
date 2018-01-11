@@ -7,14 +7,101 @@
  */
 function mro_cit_theme_functions_register_shortcodes() {
     add_shortcode('junta', 'mro_cit_board_members');
+    add_shortcode('tabla-afiliacion', 'mro_cit_membership_table');
 }
 add_action( 'init', 'mro_cit_theme_functions_register_shortcodes' );
+
+
+/*
+ * List board members
+ * - [tabla-afiliacion]
+ *
+ * Returns pricing table
+ */
+function mro_cit_membership_table($atts) {
+
+    $content = '<ul class="cd-pricing">
+    <li>
+        <header class="cd-pricing-header">
+            <h2>Institucional</h2>
+ 
+            <div class="cd-price">
+                <span>$900</span>
+                <span>mes</span>
+            </div>
+        </header> <!-- .cd-pricing-header -->
+ 
+        <div class="cd-pricing-features">
+            <ul>
+                <li class="available"><em>Boletín informativo</em></li>
+                <li class="available"><em>Acceso a informes de investigación</em></li>
+                <li class="available"><em>Puede enviar 3 asistentes a desayunos mensuales</em></li>
+                <li class="available"><em>Acceso remoto a desayunos (streaming)</em></li>
+            </ul>
+        </div> <!-- .cd-pricing-features -->
+ 
+        <footer class="cd-pricing-footer">
+            <a href="#0">Escoger</a>
+        </footer> <!-- .cd-pricing-footer -->
+    </li>
+
+    <li>
+        <header class="cd-pricing-header">
+            <h2>Empresarial</h2>
+ 
+            <div class="cd-price">
+                <span>$650</span>
+                <span>mes</span>
+            </div>
+        </header> <!-- .cd-pricing-header -->
+ 
+        <div class="cd-pricing-features">
+            <ul>
+                <li class="available"><em>Boletín informativo</em></li>
+                <li class="available"><em>Acceso a informes de investigación</em></li>
+                <li class="available"><em>Puede enviar 2 asistentes a desayunos mensuales</em></li>
+                <li class="available"><em>Acceso remoto a desayunos (streaming)</em></li>
+            </ul>
+        </div> <!-- .cd-pricing-features -->
+ 
+        <footer class="cd-pricing-footer">
+            <a href="#0">Escoger</a>
+        </footer> <!-- .cd-pricing-footer -->
+    </li>
+
+    <li>
+        <header class="cd-pricing-header">
+            <h2>Institucional</h2>
+ 
+            <div class="cd-price">
+                <span>$900</span>
+                <span>mes</span>
+            </div>
+        </header> <!-- .cd-pricing-header -->
+ 
+        <div class="cd-pricing-features">
+            <ul>
+                <li class="available"><em>Boletín informativo</em></li>
+                <li class="available"><em>Acceso a informes de investigación</em></li>
+                <li class="available"><em>Puede comprar entradas a desayunos mensuales</em></li>
+            </ul>
+        </div> <!-- .cd-pricing-features -->
+ 
+        <footer class="cd-pricing-footer">
+            <a href="#0">Escoger</a>
+        </footer> <!-- .cd-pricing-footer -->
+    </li>
+
+    </ul>';
+
+    return $content;
+}
 
 /*
  * List board members
  * - [junta]
  *
- * Returns list of board memb ers
+ * Returns list of board members
  */
 function mro_cit_board_members($atts) {
     global $wp_query,
