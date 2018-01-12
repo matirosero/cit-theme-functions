@@ -20,79 +20,89 @@ add_action( 'init', 'mro_cit_theme_functions_register_shortcodes' );
  */
 function mro_cit_membership_table($atts) {
 
-    $content = '<ul class="cd-pricing">
-    <li>
-        <header class="cd-pricing-header">
-            <h2>Institucional</h2>
- 
-            <div class="cd-price">
-                <span>$900</span>
-                <span>mes</span>
-            </div>
-        </header> <!-- .cd-pricing-header -->
- 
-        <div class="cd-pricing-features">
-            <ul>
-                <li class="available"><em>Boletín informativo</em></li>
-                <li class="available"><em>Acceso a informes de investigación</em></li>
-                <li class="available"><em>Puede enviar 3 asistentes a desayunos mensuales</em></li>
-                <li class="available"><em>Acceso remoto a desayunos (streaming)</em></li>
-            </ul>
-        </div> <!-- .cd-pricing-features -->
- 
-        <footer class="cd-pricing-footer">
-            <a href="#0">Escoger</a>
-        </footer> <!-- .cd-pricing-footer -->
-    </li>
+    $personal = get_permalink( get_page_by_title( 'Afiliación Personal' ) );
+    $empresarial = get_permalink( get_page_by_title( 'Afiliación Empresarial' ) );
+    $institucional = get_permalink( get_page_by_title( 'Afiliación Institucional' ) );
 
-    <li>
-        <header class="cd-pricing-header">
-            <h2>Empresarial</h2>
- 
-            <div class="cd-price">
-                <span>$650</span>
-                <span>mes</span>
-            </div>
-        </header> <!-- .cd-pricing-header -->
- 
-        <div class="cd-pricing-features">
-            <ul>
-                <li class="available"><em>Boletín informativo</em></li>
-                <li class="available"><em>Acceso a informes de investigación</em></li>
-                <li class="available"><em>Puede enviar 2 asistentes a desayunos mensuales</em></li>
-                <li class="available"><em>Acceso remoto a desayunos (streaming)</em></li>
-            </ul>
-        </div> <!-- .cd-pricing-features -->
- 
-        <footer class="cd-pricing-footer">
-            <a href="#0">Escoger</a>
-        </footer> <!-- .cd-pricing-footer -->
-    </li>
+    $content = '<div class="pricing row large-collapse" data-equalizer="pricing" data-equalize-on="large">
+    <div class="large-4 columns">
+        <div class="pricing-option">
+            <header class="pricing-header">
+                <h2>Institucional</h2>
 
-    <li>
-        <header class="cd-pricing-header">
-            <h2>Institucional</h2>
- 
-            <div class="cd-price">
-                <span>$900</span>
-                <span>mes</span>
-            </div>
-        </header> <!-- .cd-pricing-header -->
- 
-        <div class="cd-pricing-features">
-            <ul>
-                <li class="available"><em>Boletín informativo</em></li>
-                <li class="available"><em>Acceso a informes de investigación</em></li>
-                <li class="available"><em>Puede comprar entradas a desayunos mensuales</em></li>
-            </ul>
-        </div> <!-- .cd-pricing-features -->
- 
-        <footer class="cd-pricing-footer">
-            <a href="#0">Escoger</a>
-        </footer> <!-- .cd-pricing-footer -->
-    </li>
+                <div class="cd-price">
+                    <span>$900</span>
+                    <span>año</span>
+                </div>
+            </header> <!-- .cd-pricing-header -->
 
-    </ul>';
+            <div class="cd-pricing-features" data-equalizer-watch="pricing">
+                <ul>
+                    <li class="available">Boletín informativo</li>
+                    <li class="available">Descargar informes</li>
+                    <li class="available">3 asistentes de la institución a eventos del Club</li>
+                    <li class="available">Acceso remoto a eventos (streaming)</li>
+                </ul>
+            </div> <!-- .cd-pricing-features -->
+
+            <footer class="cd-pricing-footer">
+                <a href="'.$institucional.'" class="button">Escoger</a>
+            </footer> <!-- .cd-pricing-footer -->
+        </div>
+    </div>
+
+    <div class="large-4 columns">
+        <div class="pricing-option">
+            <header class="pricing-header">
+                <h2>Empresarial</h2>
+
+                <div class="cd-price">
+                    <span>$650</span>
+                    <span>año</span>
+                </div>
+            </header> <!-- .cd-pricing-header -->
+
+            <div class="cd-pricing-features" data-equalizer-watch="pricing">
+                <ul>
+                    <li class="available">Boletín informativo</li>
+                    <li class="available">Descargar informes</li>
+                    <li class="available">2 asistentes de la empresa a eventos del Club</li>
+                    <li class="available">Acceso remoto a eventos (streaming)</li>
+                </ul>
+            </div> <!-- .cd-pricing-features -->
+
+            <footer class="cd-pricing-footer">
+                <a href="'.$empresarial.'" class="button">Escoger</a>
+            </footer> <!-- .cd-pricing-footer -->
+        </div>
+    </div>
+
+    <div class="large-4 columns">
+        <div class="pricing-option">
+            <header class="pricing-header">
+                <h2>Personal</h2>
+
+                <div class="cd-price">
+                    <span>Gratis</span>
+                </div>
+            </header> <!-- .cd-pricing-header -->
+
+            <div class="cd-pricing-features" data-equalizer-watch="pricing">
+                <ul>
+                    <li class="available">Boletín informativo</li>
+                    <li class="available">Descargar informes</li>
+                    <li class="available">Puede comprar entradas a eventos del Club</li>
+                    <!-- <li class="unavailable">Acceso remoto a eventos (streaming)</li> -->
+                </ul>
+            </div> <!-- .cd-pricing-features -->
+
+            <footer class="cd-pricing-footer">
+                <a href="'.$personal.'" class="button">Escoger</a>
+            </footer> <!-- .cd-pricing-footer -->
+        </div>
+    </div>
+
+    </div>';
 
     return $content;
 }
@@ -150,7 +160,7 @@ function mro_cit_board_members($atts) {
 
             	$content .= '</div>';
 
-        endwhile; 
+        endwhile;
 
         $content .= '<div>';
 
