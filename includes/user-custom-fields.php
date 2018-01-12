@@ -83,30 +83,30 @@ function mro_cit_register_user_personal_metabox() {
 }
 
 
-add_action( 'cmb2_admin_init', 'mro_cit_register_user_enterprise_metabox' );
-function mro_cit_register_user_enterprise_metabox() {
+add_action( 'cmb2_admin_init', 'mro_cit_register_user_empresarial_metabox' );
+function mro_cit_register_user_empresarial_metabox() {
 	$prefix = 'mro_cit_user_';
 	/**
 	 * Metabox for the user profile screen
 	 */
 	$cmb_user = new_cmb2_box( array(
-		'id'               => $prefix . 'afiliado_enterprise_edit',
-		'title'            => __( 'Afiliado Enterprise Profile Metabox', 'mro-cit-functions' ), // Doesn't output for user boxes
+		'id'               => $prefix . 'afiliado_empresarial_edit',
+		'title'            => __( 'Afiliado Empresarial Profile Metabox', 'mro-cit-functions' ), // Doesn't output for user boxes
 		'object_types'     => array( 'user' ), // Tells CMB2 to use user_meta vs post_meta
 		'show_names'       => true,
 		'new_user_section' => 'add-new-user', // where form will show on new user page. 'add-existing-user' is only other valid option.
 		'show_on' 			=> array( 
 								'key' => 'role', 
 								'value' => array(
-									'afiliado_enterprise', 
-									'afiliado_enterprise_pendiente'),
+									'afiliado_empresarial', 
+									'afiliado_empresarial_pendiente'),
 								),
 	) );
 
 	$cmb_user->add_field( array(
-		'name'     => __( 'Afiliado Enterprise', 'mro-cit-functions' ),
+		'name'     => __( 'Afiliado Empresarial', 'mro-cit-functions' ),
 		// 'desc'     => __( 'field description (optional)', 'mro-cit-functions' ),
-		'id'       => $prefix . 'afiliado_enterprise_title',
+		'id'       => $prefix . 'afiliado_empresarial_title',
 		'type'     => 'title',
 		'on_front' => false,
 	) );

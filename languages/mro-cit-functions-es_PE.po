@@ -1043,11 +1043,11 @@ msgid "Company"
 msgstr "Compañía"
 
 #: includes/user-custom-fields.php:94
-msgid "Afiliado Enterprise Profile Metabox"
+msgid "Afiliado Empresarial Profile Metabox"
 msgstr ""
 
 #: includes/user-custom-fields.php:107
-msgid "Afiliado Enterprise"
+msgid "Afiliado Empresarial"
 msgstr ""
 
 #: includes/user-custom-fields.php:115
