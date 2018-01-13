@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: CIT Theme Functions\n"
-"POT-Creation-Date: 2018-01-03 11:07-0600\n"
-"PO-Revision-Date: 2018-01-03 11:26-0600\n"
+"POT-Creation-Date: 2018-01-13 02:02-0600\n"
+"PO-Revision-Date: 2018-01-13 02:05-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_PE\n"
@@ -56,25 +56,26 @@ msgstr ""
 #: includes/demo-register-custom-fields.php:266
 #: includes/demo-register-custom-fields.php:273
 #: includes/demo-register-custom-fields.php:287
-#: vendor/cmb2/example-functions.php:131 vendor/cmb2/example-functions.php:144
-#: vendor/cmb2/example-functions.php:157 vendor/cmb2/example-functions.php:164
-#: vendor/cmb2/example-functions.php:177 vendor/cmb2/example-functions.php:185
-#: vendor/cmb2/example-functions.php:194 vendor/cmb2/example-functions.php:202
-#: vendor/cmb2/example-functions.php:217 vendor/cmb2/example-functions.php:225
-#: vendor/cmb2/example-functions.php:233 vendor/cmb2/example-functions.php:250
-#: vendor/cmb2/example-functions.php:259 vendor/cmb2/example-functions.php:272
-#: vendor/cmb2/example-functions.php:279 vendor/cmb2/example-functions.php:286
-#: vendor/cmb2/example-functions.php:300 vendor/cmb2/example-functions.php:313
-#: vendor/cmb2/example-functions.php:326 vendor/cmb2/example-functions.php:338
-#: vendor/cmb2/example-functions.php:347 vendor/cmb2/example-functions.php:355
-#: vendor/cmb2/example-functions.php:364 vendor/cmb2/example-functions.php:371
-#: vendor/cmb2/example-functions.php:385 vendor/cmb2/example-functions.php:457
-#: vendor/cmb2/example-functions.php:548 vendor/cmb2/example-functions.php:556
-#: vendor/cmb2/example-functions.php:563 vendor/cmb2/example-functions.php:570
-#: vendor/cmb2/example-functions.php:577 vendor/cmb2/example-functions.php:584
-#: vendor/cmb2/example-functions.php:591 vendor/cmb2/example-functions.php:618
-#: vendor/cmb2/example-functions.php:626 vendor/cmb2/example-functions.php:633
-#: vendor/cmb2/example-functions.php:678
+#: includes/register-custom-fields.php:61
+#: includes/register-custom-fields.php:84 vendor/cmb2/example-functions.php:131
+#: vendor/cmb2/example-functions.php:144 vendor/cmb2/example-functions.php:157
+#: vendor/cmb2/example-functions.php:164 vendor/cmb2/example-functions.php:177
+#: vendor/cmb2/example-functions.php:185 vendor/cmb2/example-functions.php:194
+#: vendor/cmb2/example-functions.php:202 vendor/cmb2/example-functions.php:217
+#: vendor/cmb2/example-functions.php:225 vendor/cmb2/example-functions.php:233
+#: vendor/cmb2/example-functions.php:250 vendor/cmb2/example-functions.php:259
+#: vendor/cmb2/example-functions.php:272 vendor/cmb2/example-functions.php:279
+#: vendor/cmb2/example-functions.php:286 vendor/cmb2/example-functions.php:300
+#: vendor/cmb2/example-functions.php:313 vendor/cmb2/example-functions.php:326
+#: vendor/cmb2/example-functions.php:338 vendor/cmb2/example-functions.php:347
+#: vendor/cmb2/example-functions.php:355 vendor/cmb2/example-functions.php:364
+#: vendor/cmb2/example-functions.php:371 vendor/cmb2/example-functions.php:385
+#: vendor/cmb2/example-functions.php:457 vendor/cmb2/example-functions.php:548
+#: vendor/cmb2/example-functions.php:556 vendor/cmb2/example-functions.php:563
+#: vendor/cmb2/example-functions.php:570 vendor/cmb2/example-functions.php:577
+#: vendor/cmb2/example-functions.php:584 vendor/cmb2/example-functions.php:591
+#: vendor/cmb2/example-functions.php:618 vendor/cmb2/example-functions.php:626
+#: vendor/cmb2/example-functions.php:633 vendor/cmb2/example-functions.php:678
 msgid "field description (optional)"
 msgstr ""
 
@@ -274,7 +275,7 @@ msgid "Multiple Files"
 msgstr "Archivos múltiples"
 
 #: includes/demo-register-custom-fields.php:304
-#: includes/register-custom-fields.php:183
+#: includes/register-custom-fields.php:298
 #: vendor/cmb2/example-functions.php:402
 msgid "Upload or add multiple images/attachments."
 msgstr "﻿Subir o añadir varias imágenes."
@@ -286,7 +287,7 @@ msgstr ""
 
 #. translators: %s: link to codex.wordpress.org/Embeds
 #: includes/demo-register-custom-fields.php:314
-#: includes/register-custom-fields.php:162
+#: includes/register-custom-fields.php:277
 #: vendor/cmb2/example-functions.php:412
 #, php-format
 msgid ""
@@ -296,8 +297,8 @@ msgstr ""
 "disponibles en %s."
 
 #: includes/eventscalendar-custom-fields.php:15
-#: includes/register-custom-fields.php:24
-#: includes/register-custom-fields.php:100
+#: includes/register-custom-fields.php:139
+#: includes/register-custom-fields.php:215
 msgid "Additional information"
 msgstr "Información adicional"
 
@@ -671,109 +672,179 @@ msgstr "No hay informes en la papelera"
 msgid "Report items"
 msgstr "Elementos de informe"
 
+#: includes/register-custom-fields.php:23
+msgid "Content"
+msgstr ""
+
 #: includes/register-custom-fields.php:33
-msgid "Position"
-msgstr "Puesto"
+msgid "Layout"
+msgstr ""
 
 #: includes/register-custom-fields.php:40
-msgid "Email"
-msgstr "Correo electrónico"
+msgid "Hero image to the left"
+msgstr ""
 
-#: includes/register-custom-fields.php:58
-msgid "Report download information"
-msgstr "Información de descarga de reporte"
+#: includes/register-custom-fields.php:41
+msgid "Hero image to the right"
+msgstr ""
 
-#: includes/register-custom-fields.php:77
-msgid "Download ID"
-msgstr "ID de descarga"
+#: includes/register-custom-fields.php:60
+msgid "Background color"
+msgstr "Color de fondo"
 
-#: includes/register-custom-fields.php:78
-msgid "ID de desccarga (bajo Downloads)"
+#: includes/register-custom-fields.php:73
+msgid "Primary text"
+msgstr "Texto principal"
+
+#: includes/register-custom-fields.php:74
+msgid ""
+"If there is a hero image, this is the text that goes with it. In the "
+"traditional layout, this is the only text."
+msgstr ""
+
+#: includes/register-custom-fields.php:83
+msgid "Secondary text"
+msgstr "Texto secundario"
+
+#: includes/register-custom-fields.php:98
+msgid "Additional content blocks"
+msgstr "Bloques de contenido adicional"
+
+#: includes/register-custom-fields.php:99
+msgid "Add another content block"
+msgstr "Agregue otro bloque de contenido"
+
+#: includes/register-custom-fields.php:100
+msgid "Remove content block"
+msgstr ""
+
+#: includes/register-custom-fields.php:106
+msgid "Block Title"
+msgstr ""
+
+#: includes/register-custom-fields.php:107
+msgid "Enter the title for the content block."
+msgstr "Ingrese el título para el bloque de contenido."
+
+#: includes/register-custom-fields.php:113
+msgid "Block ID"
 msgstr ""
 
 #: includes/register-custom-fields.php:114
+msgid "Lowercase and dashes (-) only"
+msgstr ""
+
+#: includes/register-custom-fields.php:120
+msgid "Block Content"
+msgstr "Bloque de contenido"
+
+#: includes/register-custom-fields.php:121
+msgid "Enter the content."
+msgstr ""
+
+#: includes/register-custom-fields.php:148
+msgid "Position"
+msgstr "Puesto"
+
+#: includes/register-custom-fields.php:155
+msgid "Email"
+msgstr "Correo electrónico"
+
+#: includes/register-custom-fields.php:173
+msgid "Report download information"
+msgstr "Información de descarga de reporte"
+
+#: includes/register-custom-fields.php:192
+msgid "Download ID"
+msgstr "ID de descarga"
+
+#: includes/register-custom-fields.php:193
+msgid "ID de desccarga (bajo Downloads)"
+msgstr ""
+
+#: includes/register-custom-fields.php:229
 msgid "Presentation"
 msgstr "Presentación"
 
-#: includes/register-custom-fields.php:115
+#: includes/register-custom-fields.php:230
 msgid "Add another Presentation"
 msgstr "Añadir otra presentación"
 
-#: includes/register-custom-fields.php:116
+#: includes/register-custom-fields.php:231
 msgid "Remove Presentation"
 msgstr "Eliminar presentación"
 
-#: includes/register-custom-fields.php:124
+#: includes/register-custom-fields.php:239
 msgid "Upload file"
 msgstr "Subir archivo"
 
-#: includes/register-custom-fields.php:125
+#: includes/register-custom-fields.php:240
 msgid "Upload a PDF or enter a URL for one."
 msgstr "Subir un PDF o introducir un URL."
 
-#: includes/register-custom-fields.php:149
+#: includes/register-custom-fields.php:264
 msgid "Video text"
 msgstr "Texto del video"
 
-#: includes/register-custom-fields.php:150
+#: includes/register-custom-fields.php:265
 msgid "Texto o videos con embeds raros como los de Jimmy."
 msgstr ""
 
-#: includes/register-custom-fields.php:159
+#: includes/register-custom-fields.php:274
 msgid "Video"
 msgstr ""
 
-#: includes/register-custom-fields.php:171
+#: includes/register-custom-fields.php:286
 msgid "Gallery text"
 msgstr "Texto galería"
 
-#: includes/register-custom-fields.php:172
+#: includes/register-custom-fields.php:287
 msgid "Texto o embeds de Facebook"
 msgstr ""
 
-#: includes/register-custom-fields.php:182
+#: includes/register-custom-fields.php:297
 msgid "Photos"
 msgstr "Fotos"
 
-#: includes/register-custom-fields.php:190
+#: includes/register-custom-fields.php:305
 msgid "Evaluación de la actividad"
 msgstr ""
 
-#: includes/register-custom-fields.php:213
-#: includes/register-custom-fields.php:260
+#: includes/register-custom-fields.php:328
+#: includes/register-custom-fields.php:375
 msgid "Migration Information"
 msgstr "Información de Migración"
 
-#: includes/register-custom-fields.php:233
+#: includes/register-custom-fields.php:348
 msgid "Old URL"
 msgstr "URL viejo"
 
-#: includes/register-custom-fields.php:286
+#: includes/register-custom-fields.php:401
 msgid "Manual author"
 msgstr "Autor manual"
 
-#: includes/register-custom-fields.php:287
+#: includes/register-custom-fields.php:402
 msgid "Read-only: author"
 msgstr "Campo desactivado: autor"
 
-#: includes/register-custom-fields.php:314
+#: includes/register-custom-fields.php:429
 msgid "Manual date"
 msgstr "Fecha manual"
 
-#: includes/register-custom-fields.php:315
+#: includes/register-custom-fields.php:430
 msgid "Read-only: date from text itself"
 msgstr "Campo desactivado: fecha dentro del texto"
 
-#: includes/register-custom-fields.php:327
+#: includes/register-custom-fields.php:442
 msgid "Yoast SEO Title"
 msgstr "Título SEO Coast"
 
-#: includes/register-custom-fields.php:328
-#: includes/register-custom-fields.php:341
+#: includes/register-custom-fields.php:443
+#: includes/register-custom-fields.php:456
 msgid "Read-only"
 msgstr "Solo lectura"
 
-#: includes/register-custom-fields.php:340
+#: includes/register-custom-fields.php:455
 msgid "Yoast SEO Description"
 msgstr "Descripción SEO Yoast"
 
@@ -1009,66 +1080,73 @@ msgstr "No hay fechas extrañas."
 msgid "Weird Dates"
 msgstr "Fecha extrañas"
 
-#: includes/user-custom-fields.php:14 vendor/cmb2/example-functions.php:540
-msgid "User Profile Metabox"
-msgstr "Metabox de perfil del usuario"
-
-#: includes/user-custom-fields.php:21 vendor/cmb2/example-functions.php:547
-#: vendor/cmb2/example-functions.php:617
-msgid "Extra Info"
-msgstr "Información extra"
-
-#: includes/user-custom-fields.php:29
-msgid "Phone number"
-msgstr "Teléfono"
-
-#: includes/user-custom-fields.php:36
-msgid "Country"
-msgstr "País"
-
-#: includes/user-custom-fields.php:52
+#: includes/user-custom-fields.php:53
 msgid "Afiliado Personal Profile Metabox"
 msgstr ""
 
-#: includes/user-custom-fields.php:63
+#: includes/user-custom-fields.php:67
 msgid "Afiliado Personal"
 msgstr ""
 
-#: includes/user-custom-fields.php:71
+#: includes/user-custom-fields.php:76 includes/user-custom-fields.php:138
+msgid "Phone number"
+msgstr "Teléfono"
+
+#: includes/user-custom-fields.php:83 includes/user-custom-fields.php:145
+msgid "Country"
+msgstr "País"
+
+#: includes/user-custom-fields.php:91
 msgid "Occupation"
 msgstr "Ocupación"
 
-#: includes/user-custom-fields.php:78
+#: includes/user-custom-fields.php:98
 msgid "Company"
 msgstr "Compañía"
 
-#: includes/user-custom-fields.php:94
+#: includes/user-custom-fields.php:114
 msgid "Afiliado Empresarial Profile Metabox"
 msgstr ""
 
-#: includes/user-custom-fields.php:107
+#: includes/user-custom-fields.php:130
 msgid "Afiliado Empresarial"
 msgstr ""
 
-#: includes/user-custom-fields.php:115
+#: includes/user-custom-fields.php:153
 msgid "Business sector"
 msgstr "Sector empresarial"
 
-#: includes/user-custom-fields.php:122
-msgid "Secondary Contact Email"
-msgstr "Correo electrónico de contacto secundario"
+#: includes/user-custom-fields.php:190
+msgid "Additional Contacts Metabox"
+msgstr "Contactos adicionales Metabox"
 
-#: includes/user-custom-fields.php:123
-msgid "Email address for secondary contact"
-msgstr "Correo electrónico de contacto secundario"
+#: includes/user-custom-fields.php:206 includes/user-custom-fields.php:216
+msgid "Additional contacts"
+msgstr "Contactos adicionales"
 
-#: includes/user-custom-fields.php:130
-msgid "Secondary Contact: First Name"
-msgstr "Nombre del contacto secundario"
+#: includes/user-custom-fields.php:219
+msgid "Contact {#}"
+msgstr "Contacto {#}"
 
-#: includes/user-custom-fields.php:137
-msgid "Secondary Contact: Last Name"
-msgstr "Apellidos del contacto secundario"
+#: includes/user-custom-fields.php:220
+msgid "Add Another Contact"
+msgstr "Añadir otro contacto"
+
+#: includes/user-custom-fields.php:221
+msgid "Remove Contact"
+msgstr "Eliminar contacto"
+
+#: includes/user-custom-fields.php:229
+msgid "Contact name"
+msgstr "Nombre del contacto"
+
+#: includes/user-custom-fields.php:235
+msgid "Contact last name"
+msgstr "Apellidos del contacto"
+
+#: includes/user-custom-fields.php:241
+msgid "Contact email"
+msgstr "Correo electrónico del contacto"
 
 #: vendor/cmb2/example-functions.php:445
 msgid "About Page Metabox"
@@ -1113,6 +1191,14 @@ msgstr ""
 #: vendor/cmb2/example-functions.php:521
 msgid "Image Caption"
 msgstr ""
+
+#: vendor/cmb2/example-functions.php:540
+msgid "User Profile Metabox"
+msgstr "Metabox de perfil del usuario"
+
+#: vendor/cmb2/example-functions.php:547 vendor/cmb2/example-functions.php:617
+msgid "Extra Info"
+msgstr "Información extra"
 
 #: vendor/cmb2/example-functions.php:555
 msgid "Avatar"
@@ -1584,6 +1670,12 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://www.matilderosero.com/"
 msgstr ""
+
+#~ msgid "Email address for secondary contact"
+#~ msgstr "Correo electrónico de contacto secundario"
+
+#~ msgid "Secondary Contact: First Name"
+#~ msgstr "Nombre del contacto secundario"
 
 #~ msgid "Past events"
 #~ msgstr "Eventos pasados"
