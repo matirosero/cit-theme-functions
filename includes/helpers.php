@@ -71,6 +71,22 @@ add_action( 'pre_get_posts', 'mro_cit_events_archive_exclude' );
 
 
 /*
+ * Reports: show all reports on one page
+ */
+function mro_cit_report_archive_pre_get_posts( $query ) {
+
+	if( $query->is_main_query() && !is_admin() && is_post_type_archive( 'cit_report' ) ) {
+
+	    $query->set( 'order', 'ASC' );
+	    $query->set( 'posts_per_page', -1 );
+
+	}
+
+}
+add_action( 'pre_get_posts', 'mro_cit_report_archive_pre_get_posts' );
+
+
+/*
  * Reverse past events order
  */
 // function mro_cit_events_archive_reverse( $query ) {
