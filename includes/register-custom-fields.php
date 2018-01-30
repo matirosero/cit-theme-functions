@@ -12,6 +12,110 @@ function link_to_old_url( $field_args, $field ) {
 }
 
 
+
+/*
+ * Page custom fields: temp subscribers
+ */
+add_action( 'cmb2_init', 'mro_cit_temp_subscribers_frontend_metabox' );
+function mro_cit_temp_subscribers_frontend_metabox() {
+	$prefix = 'mro_cit_temp_subscribers_';
+
+	$cmb = new_cmb2_box( array(
+		'id'            => $prefix . 'frontend',
+		// 'title'         => esc_html__( 'Temporary subscribers', 'mro-cit-functions' ),
+		'object_types'  => array( 'page' ), // Post type
+		'hookup'       => false,
+        'save_fields'  => false,
+	) );
+
+   $temp_subscribers = $cmb->add_field( array(
+        'id'          => $prefix . 'list',
+        'type'        => 'group',
+        'repeatable'  => true, // use false if you want non-repeatable group
+        'options'     => array(
+            'group_title'   => __( 'Subscriber {#}', 'mro-cit-functions' ), // since version 1.1.4, {#} gets replaced by row number
+            'add_button'    => __( 'Add Another Subscriber', 'mro-cit-functions' ),
+            'remove_button' => __( 'Remove Subscriber', 'mro-cit-functions' ),
+            'sortable'      => true, // beta
+            // 'closed'     => true, // true to have the groups closed by default
+        ),
+    ) );
+
+
+    $cmb->add_group_field( $temp_subscribers, array(
+        'name' => __( 'Subscriber name', 'mro-cit-functions' ),
+        'id'   => 'name',
+        'type' => 'text',
+        // 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
+    ) );
+    $cmb->add_group_field( $temp_subscribers, array(
+        'name' => __( 'Subscriber last name', 'mro-cit-functions' ),
+        'id'   => 'lastname',
+        'type' => 'text',
+        // 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
+    ) );
+    $cmb->add_group_field( $temp_subscribers, array(
+        'name' => __( 'Subscriber email', 'mro-cit-functions' ),
+        'id'   => 'email',
+        'type' => 'text_email',
+        // 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
+    ) );
+}
+
+
+/*
+ * Page custom fields: temp subscribers
+ */
+add_action( 'cmb2_admin_init', 'mro_cit_temp_subscribers_page_metabox' );
+function mro_cit_temp_subscribers_page_metabox() {
+	$prefix = 'mro_cit_temp_subscribers_';
+
+	$cmb = new_cmb2_box( array(
+		'id'            => $prefix . 'metabox',
+		'title'         => esc_html__( 'Temporary subscribers', 'mro-cit-functions' ),
+		'object_types'  => array(
+			'page'
+		), // Post type
+		'show_on'      => array( 'key' => 'page-template', 'value' => 'template-manage-temp-subscribers.php' ),
+		'context'    => 'normal',
+		'priority'   => 'high',
+	) );
+
+   $temp_subscribers = $cmb->add_field( array(
+        'id'          => $prefix . 'list',
+        'type'        => 'group',
+        'description' => __( 'Manage temporary subscribers to the mailing list', 'mro-cit-functions' ),
+        'repeatable'  => true, // use false if you want non-repeatable group
+        'options'     => array(
+            'group_title'   => __( 'Subscriber {#}', 'mro-cit-functions' ), // since version 1.1.4, {#} gets replaced by row number
+            'add_button'    => __( 'Add Another Subscriber', 'mro-cit-functions' ),
+            'remove_button' => __( 'Remove Subscriber', 'mro-cit-functions' ),
+            'sortable'      => true, // beta
+            // 'closed'     => true, // true to have the groups closed by default
+        ),
+    ) );
+
+
+    $cmb->add_group_field( $temp_subscribers, array(
+        'name' => __( 'Subscriber name', 'mro-cit-functions' ),
+        'id'   => 'name',
+        'type' => 'text',
+        // 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
+    ) );
+    $cmb->add_group_field( $temp_subscribers, array(
+        'name' => __( 'Subscriber last name', 'mro-cit-functions' ),
+        'id'   => 'lastname',
+        'type' => 'text',
+        // 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
+    ) );
+    $cmb->add_group_field( $temp_subscribers, array(
+        'name' => __( 'Subscriber email', 'mro-cit-functions' ),
+        'id'   => 'email',
+        'type' => 'text_email',
+        // 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
+    ) );
+}
+
 /*
  * Page custom fields
  */
