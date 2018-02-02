@@ -75,7 +75,6 @@ require_once( dirname( __FILE__ ) . '/includes/cmb2-showon-filters.php' );
 require_once( dirname( __FILE__ ) . '/includes/demo-register-custom-fields.php' );
 require_once( dirname( __FILE__ ) . '/includes/register-custom-fields.php' );
 require_once( dirname( __FILE__ ) . '/includes/user-custom-fields.php' );
-require_once( dirname( __FILE__ ) . '/includes/manage-frontend-temp-users.php' );
 
 
 /**
