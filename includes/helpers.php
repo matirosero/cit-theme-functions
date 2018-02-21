@@ -5,6 +5,24 @@
  * @since 0.1.0
  */
 
+// Change sender name and email
+
+// Function to change email address
+ 
+function mro_cit_sender_email( $original_email_address ) {
+    return 'info@clubdeinvestigacion.com';
+}
+ 
+// Function to change sender name
+function mro_cit_sender_name( $original_email_from ) {
+    return 'Club de Investigación Tecnológica';
+}
+ 
+// Hooking up our functions to WordPress filters 
+add_filter( 'wp_mail_from', 'mro_cit_sender_email' );
+add_filter( 'wp_mail_from_name', 'mro_cit_sender_name' );
+
+
 
 /*
  * Include CPT in certain archives
