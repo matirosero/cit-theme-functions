@@ -5,6 +5,18 @@
  * @since 0.1.0
  */
 
+
+/**
+ * Only return default value if we don't have a post ID (in the 'post' query variable)
+ *
+ * @param  bool  $default On/Off (true/false)
+ * @return mixed          Returns true or '', the blank default
+ */
+function cmb2_set_checkbox_default_for_new_post( $default ) {
+	return isset( $_GET['post'] ) ? '' : ( $default ? (string) $default : '' );
+}
+
+
 // Change sender name and email
 
 // Function to change email address

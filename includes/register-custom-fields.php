@@ -310,6 +310,30 @@ function mro_cit_register_report_metabox() {
 /*
  * Events custom fields
  */
+add_action( 'cmb2_admin_init', 'mro_cit_register_events_rsvp_metabox' );
+function mro_cit_register_events_rsvp_metabox() {
+	$prefix = 'mro_cit_event_';
+
+	$cmb_demo = new_cmb2_box( array(
+		'id'            => $prefix . 'rsvp_metabox',
+		'title'         => esc_html__( 'Inscripción', 'mro-cit-functions' ),
+		'object_types'  => array(
+			'cit_past_event',
+			'tribe_events'
+		), // Post type
+		'context'    => 'normal',
+		'priority'   => 'high',
+	) );
+
+	$cmb_demo->add_field( array(
+		'name' => esc_html__( 'Incluir formulario de inscripción', 'mro-cit-functions' ),
+		// 'desc' => esc_html__( 'field description (optional)', 'demo-functions' ),
+		'id'   => $prefix . 'include_rsvp',
+		'type' => 'checkbox',
+		'default' => cmb2_set_checkbox_default_for_new_post( true ),
+	) );
+}
+
 add_action( 'cmb2_admin_init', 'mro_cit_register_events_metabox' );
 function mro_cit_register_events_metabox() {
 	$prefix = 'mro_cit_event_';
@@ -336,8 +360,6 @@ function mro_cit_register_events_metabox() {
             'sortable'      => true, // beta
         ),
     ) );
-
-
 
 	$cmb_demo->add_group_field( $group_download, array(
 		'name' => esc_html__( 'Upload file', 'mro-cit-functions' ),
