@@ -7,10 +7,53 @@
  */
 function mro_cit_theme_functions_register_shortcodes() {
     add_shortcode('junta', 'mro_cit_board_members');
+    add_shortcode('afiliados', 'mro_cit_list_members');
     add_shortcode('tabla-afiliacion', 'mro_cit_membership_table');
 }
 add_action( 'init', 'mro_cit_theme_functions_register_shortcodes' );
 
+
+/*
+ * List board members
+ * - [afiliados]
+ *
+ * Returns list of board members
+ */
+function mro_cit_list_members($atts) {
+    global $wp_query,
+        $post;
+
+    /*
+     * The WordPress Query class.
+     *
+     * @link http://codex.wordpress.org/Function_Reference/WP_Query
+     */
+
+    extract(shortcode_atts(array(
+        'roles' => array(
+            'afiliado_empresarial',
+            'afiliado_institucional'
+        ),
+    ), $atts));
+
+    $args = array(
+        'role__in'  => $roles,
+        'orderby'   => 'display_name',
+        'order'     => 'ASC'
+    );
+    $users = get_users( $args );
+
+
+    $return = '<ul class="members-list">';
+
+    foreach ( $users as $user ) {
+        $return .= '<li>' . esc_html( esc_html( $user->nickname ) ) . '</li>';
+    }
+
+    $return .= '</ul>';
+
+    return $return;
+}
 
 /*
  * List board members
