@@ -122,7 +122,7 @@ function mro_cit_register_tax() {
 		'rewrite'               => array( 'slug' => 'source' ),
 	);
 
-	register_taxonomy( 'mro_cit_db_src', $all_post_types, $args );
+	// register_taxonomy( 'mro_cit_db_src', $all_post_types, $args );
 
 
 
@@ -195,5 +195,5 @@ function mro_cit_register_tax() {
 		'rewrite'               => array( 'slug' => 'weird-date' ),
 	);
 
-	register_taxonomy( 'mro_cit_weird_date', $no_events, $args );
+	// register_taxonomy( 'mro_cit_weird_date', $no_events, $args );
 }
