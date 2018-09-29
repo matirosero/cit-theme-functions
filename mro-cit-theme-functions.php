@@ -78,6 +78,14 @@ require_once( dirname( __FILE__ ) . '/includes/user-custom-fields.php' );
 
 
 /**
+ * Admin tweaks.
+ *
+ * @since 0.1.0
+ */
+require_once( dirname( __FILE__ ) . '/includes/admin-tweaks/tax-filters.php' );
+
+
+/**
  * Sortable columns.
  * https://code.tutsplus.com/articles/quick-tip-make-your-custom-column-sortable--wp-25095
  *
