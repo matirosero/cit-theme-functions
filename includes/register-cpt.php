@@ -224,47 +224,6 @@ function mro_cit_register_cpt() {
 	); /* end of register post type */
 
 
-	/*
-	 * Past events
-	 */
-	// register_post_type( 'cit_past_event',
-
-	//  	// let's now add all the options for this post type
-	// 	array('labels' => array(
-	// 			'name' => __('Past events', 'mro-cit-functions'), /* This is the Title of the Group */
-	// 			'singular_name' => __('Past event', 'mro-cit-functions'), /* This is the individual type */
-	// 			'all_items' => __('All Past events', 'mro-cit-functions'), /* the all items menu item */
-	// 			'add_new' => __('Add New', 'mro-cit-functions'), /* The add new menu item */
-	// 			'add_new_item' => __('Add New Past event', 'mro-cit-functions'), /* Add New Display Title */
-	// 			'edit' => __( 'Edit', 'mro-cit-functions' ), /* Edit Dialog */
-	// 			'edit_item' => __('Edit Past event', 'mro-cit-functions'), /* Edit Display Title */
-	// 			'new_item' => __('New Past event', 'mro-cit-functions'), /* New Display Title */
-	// 			'view_item' => __('View Past event', 'mro-cit-functions'), /* View Display Title */
-	// 			'search_items' => __('Search Past events', 'mro-cit-functions'), /* Search Custom Type Title */
-	// 			'not_found' =>  __('No past events found', 'mro-cit-functions'), /* This displays if there are no entries yet */
-	// 			'not_found_in_trash' => __('No past events found in Trash', 'mro-cit-functions'), /* This displays if there is nothing in the trash */
-	// 			'parent_item_colon' => ''
-	// 		), /* end of arrays */
-	// 		'description' => __( 'Past event items', 'mro-cit-functions' ), /* Custom Type Description */
-	// 		'public' => true,
-	// 		'publicly_queryable' => true, //change to false?
-	// 		'exclude_from_search' => false,
-	// 		'show_ui' => true,
-	// 		'query_var' => true,
-	// 		'menu_position' => 7, /* this is what order you want it to appear in on the left hand side menu */
-	// 		'menu_icon' => 'dashicons-backup', /* the icon for the custom post type menu. uses built-in dashicons (CSS class name) */
-	// 		'rewrite' 	=> array( 'slug' => 'eventos-pasados' ),
-	// 		'has_archive' => true, /* you can rename the slug here */
-	// 		'taxonomies' => array( 'category', 'mro_cit_event_year' ),
-	// 		// 'capability_type' => 'post',
-	// 		'hierarchical' => false, //false = post
-	// 		/* the next one is important, it tells what's enabled in the post editor */
-	// 		'supports' => array( 'title', 'editor', 'excerpt', 'author' ),
-	// 		'show_in_menu'        => TRUE,
- //        	'show_in_nav_menus'   => true,  //change to false?
-	//  	) /* end of options */
-	// ); /* end of register post type */
-
 
 	/*
 	 * Profile

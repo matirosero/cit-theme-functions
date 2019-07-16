@@ -334,6 +334,10 @@ function mro_cit_register_events_rsvp_metabox() {
 	) );
 }
 
+
+
+
+
 add_action( 'cmb2_admin_init', 'mro_cit_register_events_metabox' );
 function mro_cit_register_events_metabox() {
 	$prefix = 'mro_cit_event_';
@@ -370,21 +374,6 @@ function mro_cit_register_events_metabox() {
 			'type' => 'application/pdf', // Make library only display PDFs.
 		),
 	) );
-
-
-	// $cmb_demo->add_field( array(
-	// 	'name' => esc_html__( 'Upload file', 'mro-cit-functions' ),
-	// 	'desc' => esc_html__( 'Upload a PDF or enter a URL for one.', 'mro-cit-functions' ),
-	// 	'id'   => $prefix . 'presentation_file',
-	// 	'type' => 'file',
-	// 	'repeatable' => true,
-	// 	'query_args' => array(
-	// 		'type' => 'application/pdf', // Make library only display PDFs.
-	// 	),
-	// ) );
-
-
-
 
 	$cmb_demo->add_field( array(
 		'name' => esc_html__( 'Video text', 'mro-cit-functions' ),
