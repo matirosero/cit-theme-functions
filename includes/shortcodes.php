@@ -188,13 +188,13 @@ function mro_cit_board_members($atts) {
     if( ! $query->have_posts() ) :
         return false;
     else :
-    	$content = '<div class="row small-up-2 medium-up-3">';
+    	$content = '<div class="grid-x grid-padding-x small-up-2 medium-up-3 large-up-3">';
 
 		while( $query->have_posts() ) : $query->the_post();
 
-            $content .= '<div class="profile-block column column-block">
-            	<a href="' . get_permalink() . '">'.
-            	get_the_post_thumbnail($post->ID,'thumbnail', array( 'class' => 'profile-image' )).'</a>
+            $content .= '<div class="profile-block cell">
+            	<a href="' . get_permalink() . '" class="profile-image">'.
+            	get_the_post_thumbnail($post->ID,'thumbnail').'</a>
             	<h3 class="entry-title"><a href="' . get_permalink() . '">' . get_the_title() . '</a></h3>';
 
             if ( get_post_meta( $post->ID, 'mro_cit_board_member_position', true ) ) :
