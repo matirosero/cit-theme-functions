@@ -59,7 +59,7 @@ function mro_cit_list_members($atts) {
  * Show membership options
  * - [tabla-afiliacion]
  *
- * Returns pricing table
+ * Returns membership options table
  */
 function mro_cit_membership_table($atts) {
 
