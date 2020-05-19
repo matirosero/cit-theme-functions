@@ -332,6 +332,19 @@ function mro_cit_register_events_rsvp_metabox() {
 		'type' => 'checkbox',
 		'default' => cmb2_set_checkbox_default_for_new_post( true ),
 	) );
+
+	$cmb_demo->add_field( array(
+		'name'       => esc_html__( 'Formulario', 'demo-functions' ),
+		// 'desc'       => esc_html__( 'field description (optional)', 'demo-functions' ),
+		'id'         => $prefix . 'form_shortcode',
+		'type'       => 'text',
+		// 'show_on_cb' => 'mro_cit_demo_hide_if_no_cats', // function should return a bool value
+		// 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
+		// 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
+		// 'on_front'        => false, // Optionally designate a field to wp-admin only
+		// 'repeatable'      => true,
+		// 'column'          => true, // Display field value in the admin post-listing columns
+	) );
 }
 
 
