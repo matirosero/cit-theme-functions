@@ -11,6 +11,52 @@ function link_to_old_url( $field_args, $field ) {
 	}
 }
 
+/*
+ * Page custom fields: Livestream
+ */
+add_action( 'cmb2_admin_init', 'cit_livestream_page_metabox' );
+function cit_livestream_page_metabox() {
+	$prefix = 'mro_cit_livestream_';
+
+	$cmb = new_cmb2_box( array(
+		'id'            => $prefix . 'metabox',
+		'title'         => esc_html__( 'Livestream information', 'mro-cit-functions' ),
+		'object_types'  => array(
+			'page'
+		), // Post type
+		'show_on'   => array( 
+			'key' 	=> 'page-template', 
+			'value' => 'template-livestream.php' 
+		),
+		'context'    => 'normal',
+		'priority'   => 'high',
+	) );
+
+	$cmb->add_field( array(
+		'name' => esc_html__( 'oEmbed', 'demo-functions' ),
+		'desc' => sprintf(
+			/* translators: %s: link to codex.wordpress.org/Embeds */
+			esc_html__( 'Enter a youtube, twitter, or instagram URL. Supports services listed at %s.', 'demo-functions' ),
+			'<a href="https://codex.wordpress.org/Embeds">codex.wordpress.org/Embeds</a>'
+		),
+		'id'   => $prefix . 'embed',
+		'type' => 'oembed',
+	) );
+
+	$cmb->add_field( array(
+		'name' => esc_html__( 'Active?', 'demo-functions' ),
+		// 'desc' => esc_html__( 'field description (optional)', 'demo-functions' ),
+		'id'   => $prefix . 'active',
+		'type' => 'checkbox',
+	) );
+
+	$cmb->add_field( array(
+		'name' => esc_html__( 'Show chat?', 'demo-functions' ),
+		// 'desc' => esc_html__( 'field description (optional)', 'demo-functions' ),
+		'id'   => $prefix . 'chat',
+		'type' => 'checkbox',
+	) );
+}
 
 
 /*
