@@ -380,16 +380,18 @@ function mro_cit_register_events_rsvp_metabox() {
 	) );
 
 	$cmb_demo->add_field( array(
-		'name'       => esc_html__( 'Formulario', 'demo-functions' ),
+		'name'       => esc_html__( 'Formulario', 'mro-cit-functions' ),
 		// 'desc'       => esc_html__( 'field description (optional)', 'demo-functions' ),
 		'id'         => $prefix . 'form_shortcode',
 		'type'       => 'text',
+		'default'    => esc_attr__( '[caldera_form id="CF5ec4040cbbab6"]', 'mro-cit-functions' ),
 	) );
 	$cmb_demo->add_field( array(
-		'name'       => esc_html__( 'Formulario afiliados personales', 'demo-functions' ),
+		'name'       => esc_html__( 'Formulario afiliados personales', 'mro-cit-functions' ),
 		// 'desc'       => esc_html__( 'field description (optional)', 'demo-functions' ),
 		'id'         => $prefix . 'personal_acct_form_shortcode',
 		'type'       => 'text',
+		'default'    => esc_attr__( '[caldera_form id="CF5ed7e0f6e05ae"]', 'mro-cit-functions' ),
 	) );
 }
 
